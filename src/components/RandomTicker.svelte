@@ -94,7 +94,7 @@
         ' using VLC Media Player!',
         ' using Windhawk!',
         ' using i3wm!'
-    ];
+    ]
 </script>
 
 {randomlines[Math.floor(Math.random()*randomlines.length)]}
