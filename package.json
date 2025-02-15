@@ -1,7 +1,7 @@
 {
-  "name": "futon-blank",
+  "name": "futon-reform",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.0.5"
+    "@astrojs/mdx": "^4.0.2",
+    "@astrojs/svelte": "^7.0.4",
+    "@fontsource/atkinson-hyperlegible": "^5.1.1",
+    "@fontsource/ibm-plex-mono": "^5.1.1",
+    "@fontsource/zilla-slab": "^5.1.1",
+    "astro": "^5.0.5",
+    "nottheme": "^1.0.3",
+    "sass": "^1.82.0",
+    "svelte": "^5.19.5",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10"
   }
 }

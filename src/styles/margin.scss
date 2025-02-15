@@ -1,0 +1,24 @@
+// this file removes all the margin and padding from every element by default
+// to allow more control over elements. is it better? idk. it sure makes things easier.
+
+@import "colors";
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+   /* use these if ur using pixel fonts
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-text-size-adjust: 100%; */
+
+    scrollbar-gutter: stable;
+    scrollbar-color: $gruvbox-fg #gruvbox-bg;
+  }
+
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

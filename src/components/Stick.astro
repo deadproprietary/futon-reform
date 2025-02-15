@@ -1,0 +1,31 @@
+---
+import Image from 'astro/components/Image.astro'
+import StickPNG from '../assets/stick.png'
+---
+<div id="stickwrapper">
+    <Image src={StickPNG} alt="Stick PNG Image" format="png" />
+</div>
+
+<style>
+    div#stickwrapper{
+        transition: 0.2s;
+        display: flex;
+        justify-content: right;
+        z-index: -999;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        
+        img {
+            position: relative;
+            height: auto;
+            width: 70%;
+        }
+    }
+    
+    @media screen and (max-width: 1200px) {
+        div#stickwrapper{
+            opacity: 0.5;
+        }
+    }
+</style>

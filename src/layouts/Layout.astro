@@ -1,22 +1,154 @@
-<!doctype html>
+---
+import '@fontsource/atkinson-hyperlegible/400.css';
+import '@fontsource/atkinson-hyperlegible/400-italic.css';
+import '@fontsource/atkinson-hyperlegible/700.css';
+import '@fontsource/atkinson-hyperlegible/700-italic.css';
+
+import '@fontsource/zilla-slab/400.css';
+import '@fontsource/zilla-slab/700.css';
+import '@fontsource/zilla-slab/400-italic.css';
+import '@fontsource/zilla-slab/700-italic.css';
+
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/700.css';
+import '@fontsource/ibm-plex-mono/400-italic.css';
+import '@fontsource/ibm-plex-mono/700-italic.css';
+
+import "../styles/layout.scss";
+
+import { ThemeLoader, ThemeSelect, ThemeStyling } from "nottheme";
+import { ClientRouter } from "astro:transitions";
+
+import Stick from "../components/Stick.astro";
+
+import settings from "../theme";
+import Sidebar from "../components/Sidebar.astro";
+
+interface Props {
+	title: string;
+	path?: string;
+
+	description?: string;
+	cover?: string;
+
+	largeTitle?: boolean;
+	showDescription?: boolean;
+}
+
+const {
+	title,
+	path,
+
+	description,
+	cover,
+
+	largeTitle,
+	showDescription
+} = Astro.props;
+
+let largeTitleVar;
+if (largeTitle) {
+	largeTitleVar = '5.5rem';
+} else {
+	largeTitleVar = '3rem';
+}
+
+const descPosX = (title.length / 2.1).toString() + 'rem';
+
+---
+<!doctype HTML>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<ClientRouter/>
+		<ThemeStyling settings={settings} />
 	</head>
-	<body>
-		<slot />
+
+	<body class="nottheme">
+		<ThemeLoader settings={settings} />
+		<div id="outer-container">
+			<div id="sidebar">
+				<Sidebar>
+					<ThemeSelect settings={settings} />
+				</Sidebar>
+			</div>
+			<div id="main-container">
+				<div id="spacer" style="min-width: 40.2rem; height: 0; position: relative;">&nbsp;</div>
+				<div class="doc">
+					<div id="title-desc">
+						<h1 class="title">{title}</h1>
+						<span class="description">{description}</span></div>
+					<slot />
+				</div>
+			</div>
+		</div>
+		<Stick />
+		<script>
+			let allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+
+			// loop on all checkboxes found (trick to iterate on nodeList)
+			[].forEach.call(allCheckboxes, function (checkbox) {
+				checkbox.checked = checkbox.defaultChecked;
+			});
+
+		</script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style define:vars={{largeTitleVar, descPosX}}>
+	#title-desc {
+		display: flex;
+		flex-direction: column;
+	}
+	h1.title {
+		font-size: var(--largeTitleVar);
+		hyphens: none;
+		word-break: keep-all;
+	}
+	.description {
+		font-size: 1.2rem;
+		color: #eee;
+		position: relative;
+		top: -1.1rem;
+		left: var(--descPosX);
+		font-style: italic;
+		filter:
+			drop-shadow(1px 0px 0px #1e1d21)
+			drop-shadow(0px 1px 0px #1e1d21)
+			drop-shadow(-1px 0px 0px #1e1d21)
+			drop-shadow(0px -1px 0px #1e1d21);
+	}
+</style>
+
+<style is:global>
+	
+	.doc p, .doc h1, .doc h2, .doc h3, .doc h4, .doc h5, .doc h6, 
+	.doc em, .doc strong, .doc span {
+		font-family: var(--font), sans-serif;
+		line-height: var(--space);
+		letter-spacing: var(--tween);
+	}
+</style>
+
+<style is:global>
+	@keyframes bump {
+		0% {
+			opacity: 0;
+			transform: scale(1) translateX(200px);
+		}
+		50% {
+			opacity: 0.5;
+			transform: scale(1.1);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1) translateX(0);
+		}
 	}
 </style>

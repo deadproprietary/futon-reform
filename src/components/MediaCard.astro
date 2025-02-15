@@ -1,0 +1,58 @@
+---
+const {
+    image, footer, alt, width, height, float
+} = Astro.props;
+
+let padVarLeft, padVarRight;
+switch (float) {
+    case "left":
+        padVarLeft = "0";
+        padVarRight = "1rem";
+        break;
+    case "right":
+        padVarLeft = "1rem";
+        padVarRight = "0";
+}
+
+import { Image } from "astro:assets";
+---
+
+<aside>
+    <div class="media-card">
+        <Image 
+            src={image}
+            alt={alt}
+            title={alt}
+        />
+        <div class="media-footer">
+            <span>{footer}</span>
+        </div>
+    </div>
+</aside>
+
+<style define:vars={{float, alt, height, width, padVarLeft, padVarRight}}>
+    .media-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 var(--padVarRight) 0 var(--padVarLeft);
+        float: var(--float);
+        height: var(--height);
+        width: max-content;
+        
+        border: 1px #737374 solid;
+        
+        img {
+            height: var(--height);
+            width: var(--width);
+
+        }
+    }
+    
+    .media-footer {
+        position: relative;
+        height: auto;
+        margin-left: 4px;
+    }
+</style>

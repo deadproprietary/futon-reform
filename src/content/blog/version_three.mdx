@@ -1,0 +1,75 @@
+---
+title: version three
+description: throw shit at the wall etc.
+date: 2025-02-15
+---
+import MediaCard from "/src/components/MediaCard.astro";
+import projectImg from "res/version_three/project.png";
+
+## hey. again.
+
+Happy late Valentine's Day, if you celebrate. Usually I never mention it cuz it isn't a holiday I bother to think about. 
+*(outside of the cheap ass chocolate lol.)*  
+But the spirit of companionship is a nice one and celebrating the ones you have 
+close to you is undeniably worth doing.
+
+Like the way me and procrastination have been together for the last 13 years or so.
+
+For as long as I've been burdened with *responsibilities*, the one thing I've always been able to predict and anticipate is
+doing everything as late as possible, as fast as possible, while very actively trying to repress the thoughts of any potential consequences.
+
+&nbsp;
+
+<MediaCard
+    image={projectImg}
+    alt="The project files for this website."
+    float="right"
+    width="18rem"
+/>
+Except for uh. Well. ***This.***
+
+This website rewrite took me about **3 months** or so. In that time I've gotten a new drawing tablet, opened commissions,
+nearly beat every challenge deck in Balatro, picked up another character in Street Fighter and (most importantly) gotten laid off.
+
+That's a far cry from the kid who nearly failed English class despite being fluent at it just because they didn't wanna turn in the homework.
+*Go me, motherfucker.*
+
+___
+
+## learn how to code stupid, stupid.
+
+So with the preamble out of the way, let's all ask the age old question — ***what prompted this change?***
+
+And the answer, just like last time, is **the old site sucked shit.**
+
+What's the deal there? If you read the old blogpost I've *reluctantly* archived from when the first rewrite was brought upon this
+domain, there's a real sense of pride in the text that can only come from the highest point of the Dunning-Kruger line. 
+I was real proud of what I had managed to accomplish at that point, cuz it looked pretty nice all things considered.
+
+Of course, the tiny little detail I had missed out on was the fact that the backend was a hodgepodge of
+shotgun-trial-and-error measuring, `position: absolute;` and a complete lack of understanding what
+[Astro](https://astro.build ' ') is capable of. And I guess the typography was all over the place too.
+
+That reared it's head *really damn fast* when I started having ideas for more features for the site. I suddenly did
+not find myself wanting to even touch the codebase!
+
+So despite the fact that the website *looks* nice, I decided to hell with it and went for a full-on rewrite, this time
+with some rules in mind;
+- One unified layout for the entire site as a whole.
+- Make page creation as easy as possible.
+- Don't put literally **all** the styling in a single CSS file.
+
+Yes I really did do that last one. It's as bad as you can imagine.  
+The rules were mostly inspired by the website of coding whiz (and good friend) **[NotNite,](https://notnite.com " ")**
+whose simple website with a single layout made it a no-brainer to go for something just as easy for the mind... just a bit
+fancier.
+
+With all that in mind, and several months of brainstorming later, we are now here. So let's run through the changes.
+
+## friday night at the bar.
+
+The sidebar is the centerpiece of the entire site.  
+Everything from site pages to external links are accessible just by clicking the left side of the screen. (Or Esc if you have Javascript enabled.)
+
+That alone makes the website look cleaner. I didn't want to go for a generic hamburger menu, so I made something that I feel
+is unique enough, while still as

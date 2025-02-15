@@ -1,0 +1,148 @@
+---
+import { Image } from "astro:assets"
+import pillowImage from "../assets/buttons/pillow.png"
+import eightyeightImage from "../assets/buttons/88x31.png"
+import clipstudioImage from "../assets/buttons/clipstudiopaint.png"
+import ffxivImage from "../assets/buttons/ffxiv.gif"
+import gothImage from "../assets/buttons/gothzip.png"
+import notniteImage from "../assets/buttons/notnite.png"
+import astroImage from "../assets/buttons/astro.png"
+import cobaltImage from "../assets/buttons/cobalt.png"
+import raflImage from "../assets/buttons/raflcoopter.gif"
+---
+
+<div class="button-container">
+    <div class="button">
+        <Image
+            src={pillowImage}
+            alt="yummypillow.art"
+            loading="eager"
+            format="PNG"
+        />
+    </div>
+
+    
+    <div class="button">
+        <a href="https://notnite.com">
+            <Image
+                src={notniteImage}
+                alt="NotNite"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+    
+
+    
+    <div class="button">
+        <a href="https://eightyeightthirty.one">
+            <Image
+                src={eightyeightImage}
+                alt="88x31"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+
+    
+    <div class="button">
+        <a href="https://na.finalfantasyxiv.com/">
+            <Image
+                src={ffxivImage}
+                alt="Final Fantasy XIV"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+
+
+
+    <div class="button">
+        <a href="https://goth.zip">
+            <Image
+                src={gothImage}
+                alt="goth.zip"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+
+
+
+    <div class="button">
+        <a href="https://www.clipstudio.net/en/">
+            <Image
+                src={clipstudioImage}
+                alt="Clip Studio Paint"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+
+
+
+    <div class="button">
+        <a href="https://astro.build/">
+            <Image
+                src={astroImage}
+                alt="Astro"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+
+
+
+    <div class="button">
+        <a href="https://cobaltmusic.fi/">
+            <Image
+                src={cobaltImage}
+                alt="Cobalt Music"
+                loading="eager"
+                format="PNG"
+            />
+        </a>
+    </div>
+
+
+
+    <div class="button">
+        <a href="https://raflcoopter.carrd.co/">
+            <Image
+                src={raflImage}
+                alt="Raflcoopter"
+                loading="eager"
+                format="GIF"
+            />
+        </a>
+    </div>
+
+</div>
+
+<style>
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        flex-wrap: wrap;
+    }
+    .button {
+        position: relative;
+        width: 88px;
+        height: 31px;
+    }
+    a {
+        display: block;
+        width: 0;
+        height: 0;
+    }
+    a:hover {
+        background: none;
+    }
+</style>

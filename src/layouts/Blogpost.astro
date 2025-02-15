@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+interface Props {
+    title: string;
+    description: string;
+    date: Date;
+    cover?: string;
+    ignoreAgeWarning?: boolean;
+}
+const { title, description, date, cover, ignoreAgeWarning } = Astro.props;
+const dateStr = date.toISOString().split("T")[0];
+
+const oldThreshold = 365 * 24 * 60 * 60 * 1000;
+let old = Date.now() - date.getTime() > oldThreshold;
+if (ignoreAgeWarning) old = false;
+---
+
+<Layout
+    title={title}
+    description={description}
+    showDescription={true}
+    cover={cover}
+>
+
+    <slot />
+</Layout>

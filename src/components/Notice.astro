@@ -1,0 +1,62 @@
+---
+const {
+    type
+} = Astro.props;
+
+let color;
+let accent;
+let noticeText;
+
+switch (type) {
+    case 'warning':
+        noticeText = 'Warning';
+        accent = '#ef9e24';
+        color = '#e67421';
+        break;
+    case 'danger':
+        noticeText = 'Danger';
+        accent = '#ff2929';
+        color = '#bc0d0d';
+        break;
+    default:
+        noticeText = 'Notice';
+        accent = '#025575';
+        color = '#198bbc';
+}
+---
+
+<div class="notice">
+    <span class="attention">{noticeText}</span>
+    <span class="body"><slot/></span>
+</div>
+
+<style define:vars={{color, accent}}>
+    .notice {
+        background: var(--color);
+        border-left: 8px solid var(--accent);
+        padding: 5px 7px;
+        
+        width: 90%;
+        margin: 5px auto;
+    }
+    .attention {
+        color: #eee;
+        font-weight: bold;
+        font-size: 1.5rem;
+        filter: drop-shadow(0 0 3px #000);
+    }
+    .body {
+        font-size: 1rem;
+        filter: drop-shadow(0 0 2px #000);
+
+        p {
+            color: #ddd;
+        }
+        a:hover {
+            filter: drop-shadow(0 0 0px #00000000) !important;
+        }
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+</style>
