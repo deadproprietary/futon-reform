@@ -8,5 +8,6 @@ import svelte from '@astrojs/svelte';
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), svelte()],
-  trailingSlash: "never"
+  trailingSlash: "never",
+  site: "https://yummypillow.art",
 });
