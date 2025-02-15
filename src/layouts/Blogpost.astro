@@ -22,6 +22,19 @@ if (ignoreAgeWarning) old = false;
     showDescription={true}
     cover={cover}
 >
-
+    <span class="date">Posted&nbsp;<strong>{dateStr}</strong></span>
     <slot />
 </Layout>
+
+<style>
+    .date {
+        display: flex;
+        justify-content: right;
+        position: absolute;
+        right: 0;
+        top: 5.5rem;
+        font-style: italic;
+        font-size: 0.8em;
+        
+    }   
+</style>

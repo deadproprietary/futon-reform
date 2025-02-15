@@ -4,6 +4,7 @@ description: throw shit at the wall etc.
 date: 2025-02-15
 ---
 import MediaCard from "/src/components/MediaCard.astro";
+import Notice from "/src/components/Notice.astro";
 import projectImg from "res/version_three/project.png";
 
 ## hey. again.
@@ -31,7 +32,7 @@ Except for uh. Well. ***This.***
 This website rewrite took me about **3 months** or so. In that time I've gotten a new drawing tablet, opened commissions,
 nearly beat every challenge deck in Balatro, picked up another character in Street Fighter and (most importantly) gotten laid off.
 
-That's a far cry from the kid who nearly failed English class despite being fluent at it just because they didn't wanna turn in the homework.
+That's a far cry from the kid who nearly failed English class despite being fluent in it just because they didn't wanna turn in the homework.
 *Go me, motherfucker.*
 
 ___
@@ -68,8 +69,58 @@ With all that in mind, and several months of brainstorming later, we are now her
 
 ## friday night at the bar.
 
-The sidebar is the centerpiece of the entire site.  
+The sidebar is the centerpiece of the entire site — no pun intended.
 Everything from site pages to external links are accessible just by clicking the left side of the screen. (Or Esc if you have Javascript enabled.)
 
 That alone makes the website look cleaner. I didn't want to go for a generic hamburger menu, so I made something that I feel
-is unique enough, while still as
+is unique enough while still retaining the usefulness of them.
+
+As of publishing, the sidebar is kind of a rush job. The buttons are kind of barebones and at higher DPI they end up
+becoming kind of small. That's something for future pillow to take care of though.
+
+<sub>You have no idea how much I've just been opening and closing this thing. It's mesmerizing.</sub>
+
+## why can't you just do everything?
+
+The coolest thing about Astro when I first started using it was when NotNite introduced me to 
+**[using Markdown files as page content.](https://docs.astro.build/en/basics/layouts/#markdown-layouts " ")** That alone
+made me want to start using Astro over whatever it was I had before, and once it was set up it was the coolest thing ever.
+
+That was until I had to add things other than body text to the page. Astro has a lot of other things that you can put in
+your files like components and code, and Markdown on its own has neither. Wouldn't it be nice if you could have Markdown
+just be Markdown but with everything else also, like JavaScript and slotting in Astro components and— **[oh it just exists great.](https://mdxjs.com/ " ")**
+
+MDX is really good. Almost everything you see on the website that has words in it is an MDX file. This is an MDX file.
+The `index.html`? That's an `index.mdx`. It makes everything so stupidly neat it's kind of crazy. Being able to create 
+components to be *directly used in body text* is a game changer unlike any other, and makes creating features genuinely fun.
+
+<Notice> 
+    This notice feature took me about an hour to create, and it's endlessly reusable. This is the power that MDX grants you. **Witness it and weep.**
+</Notice>
+
+The picture higher up on this post also is an individual component. That ability alone to be able to just chuck any image
+in without hassle is something that not even fucking Word can do reliably. Damn man.
+
+## he's the serif and we're out here.
+
+Fonts. You like fonts. I like fonts. So I put three of them into this website. **Three** whole fonts. Wow!
+
+Once again inspired by NotNite's website, she had a great little theme switching dropdown that lets the user just change
+fonts on the fly. Of course, [she had made it herself.](https://github.com/NotNite/nottheme ' ') Another big shout out to her
+for also helping me get it set up during the early stages of this websites rewrite, and for just making it in general.
+
+If you want to try out the font switching, just go into the sidebar and it should be on the top. Pick whichever one you want;
+as long as you have JavaScript enabled, it should remember which one you use.
+
+## more to come, hopefully.
+
+That kinda covers most of the stuff that actually matters, outside of things just looking better.  
+If I've missed anything here, then you can check out the **[credits page!](../credits)**
+
+If you are interested in the code of the site, then you'll be glad to find it's **[fully open-source, and you can check it out any time.](https://github.com/deadproprietary/futon-reform " ")**
+
+Now if you excuse me, I gotta go back to job searching.
+
+&nbsp;
+
+Oh yeah, **[my commissions are open.](https://artistree.io/yummypillow " ")**
