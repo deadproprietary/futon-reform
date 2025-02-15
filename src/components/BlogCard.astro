@@ -3,19 +3,18 @@ import { Image } from "astro:assets";
 
 const {
     postLink,
+    coverImage,
     postDate,
     postTitle,
-    postDescription,
-    postId
+    postDescription
 } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/blog/res/*/*.{jpeg,jpg,png,gif}');
 ---
 
 <a class="blog-link" href={postLink}>
     <div class="card-container">
         <div class="cover">
-            <img class="cover-img" src=`/src/content/blog/res/${postId}/cover.png` alt="cover" />
+            <img class="cover-img" src={coverImage} alt="cover" />
         </div>
         <div class="footer">
             <span class="title">{postTitle}<br></span>
