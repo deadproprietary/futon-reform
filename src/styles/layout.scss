@@ -1,0 +1,173 @@
+@use "colors";
+
+// DO NOT EDIT BODY FONT FAMILIES OR BODY FONT SIZE IN THIS DOCUMENT
+// UNLESS EXPLICITLY NECESSARY/FOR STYLISTIC PURPOSES.
+// Please use src/theme.ts, with the defined variables
+// in src/layouts/Layout.astro!!
+
+html {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    
+    background: colors.$gruvbox-bg0-h;
+    color: colors.$gruvbox-fg;
+    height: 100%;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+    
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    padding-left: 46px;
+    display: flex;
+    justify-content: left;
+}
+
+#outer-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    max-width: 60rem;
+    padding-left: 10px;
+
+    .heading {
+        display: flex;
+
+        .nottheme-div {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+#main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .doc {
+        max-width: 40.2rem;
+        width: 100%;
+        word-break: break-word;
+        hyphens: auto;
+        padding-top: 10px;
+        padding-bottom: 150px;
+    }
+}
+
+/* -------- */
+
+h1, h3, p, a  {
+    margin: 0;
+}
+
+.doc h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.doc h3{
+    font-size: 1.35rem !important;
+}
+
+.doc p{
+    color: #eee;
+    font-size: 1.05rem !important;
+    margin-bottom: 0.7rem;
+}
+
+a {
+    transition: 0.1s;
+    transition-property: background;
+    color: inherit;
+    border-radius: 8px;
+    text-decoration: none;
+
+}
+a:not(.blog-link):hover {
+    background: colors.$link-bg;
+
+    transition-property: background;
+    transition-timing-function: ease-out;
+}
+a[title=" "]::after, a.out::after {
+    content:"\FEFF◹";
+    position: relative;
+    color: lightpink;
+    top: -0.6em;
+    left: -0.2em;
+    font-size: 60%;
+    filter: drop-shadow(0px 0px 2px lightpink);
+}
+a[title=" "] {
+    color: #eee;
+}
+
+hr {
+    color: #766481;
+    border-style: solid;
+    border-bottom: none;
+    border-width: 0.5px;
+    margin: 10px 0 10px 0;  
+}
+
+ul {
+    font-style: italic;
+    list-style-type: square;
+    li {
+        margin-top: 0.3rem;
+    }
+}
+/* -------- */
+#ticker {
+    font-size: 1.2rem;
+    position: absolute;
+    right: 1em;
+    top: 5.5em;
+    z-index: 1;
+    color: #a597bd;
+    filter:
+            drop-shadow(0.5px -0.5px 0px #1e1d21)
+            drop-shadow(-0.5px 0.5px 0px #1e1d21)
+            drop-shadow(-0.5px -0.5px 0px #1e1d21)
+            drop-shadow(0.5px 0.5px 0px #1e1d21)
+            drop-shadow(0px 0px 3px #1e1d21);
+}
+
+/* -------- */
+
+.nottheme-theming {
+    position: absolute;
+    
+    .nottheme-theming-name {
+        font-size: 14px;
+    }
+    .nottheme-theming-select {
+        transition: 0.12s;
+        border-radius: 5px;
+        background: colors.$gruvbox-bg;
+        color: colors.$gruvbox-fg;
+        border: 1px solid colors.$gruvbox-purp;
+        filter: drop-shadow(0px 0px 0px colors.$gruvbox-purp);
+    }
+    .nottheme-theming-select:hover {
+        filter: drop-shadow(0px 0px 2px colors.$gruvbox-fg);
+    }
+}
+
+/* -- media queries -- */
+
+@media (max-width:730px) {
+    :root {
+        font-size: clamp(0.5rem, 2vw, 1rem);
+    }
+}
+
+@media (min-width: 1921px) {
+    :root {
+        font-size: clamp(1rem, 0.9vw, 1.5rem);
+    }
+}

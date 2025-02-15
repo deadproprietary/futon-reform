@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+
+const {
+    postLink,
+    coverImage,
+    postDate,
+    postTitle,
+    postDescription
+} = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/blog/res/*/*.{jpeg,jpg,png,gif}');
+if (!images[coverImage]) throw new Error(`"${coverImage}" does not exist in glob: "/src/content/blog/res/*/*.{jpeg,jpg,png,gif}"`);
+---
+
+<a class="blog-link" href={postLink}>
+    <div class="card-container">
+        <div class="cover">
+            <img class="cover-img" src={coverImage} alt="cover" />
+        </div>
+        <div class="footer">
+            <span class="title">{postTitle}<br></span>
+            <span class="desc">{postDescription}<br></span>
+            <span class="date">{postDate}</span>
+        </div>
+    </div>
+</a>
+
+<style>
+    .blog-link{
+        width: 0;
+    }
+    
+    .card-container {
+        transition: 0.2s;
+        display: flex;
+        flex-direction: column;
+        height: 17em;
+        width: 30.1rem;
+        background: #1e1d21;
+        border-radius: 5px;
+        margin: 5px;
+        filter: drop-shadow(0px 0px 3px #d3c3e970);
+        overflow: hidden;
+    }
+    .blog-link:hover > .card-container {
+        filter:
+            drop-shadow(1px 0px 0px #d3c3e970)
+            drop-shadow(0px 1px 0px #d3c3e970)
+            drop-shadow(-1px 0px 0px #d3c3e970)
+            drop-shadow(0px -1px 0px #d3c3e970);
+
+    }
+
+    .cover {
+        height:20em;
+        display: flex;
+        border-radius: 5px 5px 0 0;
+        background: #3c363b;
+        overflow: hidden;
+        justify-content: center;
+
+        img {
+            position: absolute;
+            max-width: 102%;
+            width: 100%;
+            margin-top: -10%;
+        }
+    }
+
+    .footer {
+        background: #1e1d21;
+        border-top: 1px solid #D3C3E93F;
+        padding: 0.5em 0.9em;
+        z-index: 2;
+    }
+    .blog-link:hover > .footer {
+        border-top: 1px solid #d3c3e970;
+    }
+
+
+    .title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .desc {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #eee;
+    }
+    .date {
+        position: absolute;
+        bottom: 0;
+        right: 4px;
+        font-size: 0.8rem;
+    }
+
+</style>

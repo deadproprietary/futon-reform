@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/BlogCard.astro";
+import { blogPosts } from "../utils";
+
+
+const sorted = (await blogPosts()).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Layout title="blog" description="the yapper">
+    <div class="blog-container">
+        {
+            Object.values(sorted).map((post) => (
+                <BlogCard
+                    postLink={`/blog/${post.id}`}
+                    postTitle={post.data.title}
+                    postDescription={post.data.description}
+                    postDate={post.data.date.toISOString().split("T")[0]}
+                    coverImage={`/src/content/blog/res/${post.id}/cover.png`}
+                />
+            ))
+        }
+    </div>
+</Layout>
+
+<style>
+    .blog-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+</style>
