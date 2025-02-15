@@ -18,7 +18,7 @@ const sorted = (await blogPosts()).sort(
                     postTitle={post.data.title}
                     postDescription={post.data.description}
                     postDate={post.data.date.toISOString().split("T")[0]}
-                    coverImage={`/src/content/blog/res/${post.id}/cover.png`}
+                    postId={post.id}
                 />
             ))
         }
