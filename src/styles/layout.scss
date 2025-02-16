@@ -20,6 +20,9 @@ html {
 }
 
 body {
+    position: relative;
+    max-width: 100%;
+    overflow-x: hidden;
     padding-left: 46px;
     display: flex;
     justify-content: left;
