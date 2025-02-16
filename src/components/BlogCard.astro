@@ -34,10 +34,10 @@ const {
         display: flex;
         flex-direction: column;
         height: 17em;
-        width: 30.1rem;
+        width: 30rem;
         background: #1e1d21;
         border-radius: 5px;
-        margin: 5px;
+        margin: 0.5rem;
         filter: drop-shadow(0px 0px 3px #d3c3e970);
         overflow: hidden;
     }
@@ -51,22 +51,26 @@ const {
     }
 
     .cover {
+        transition: 0.2s;
         height:20em;
         display: flex;
         border-radius: 5px 5px 0 0;
         background: #3c363b;
         overflow: hidden;
         justify-content: center;
+        
 
         img {
             position: absolute;
             max-width: 102%;
             width: 100%;
             margin-top: -10%;
+            object-fit: cover;
         }
     }
 
     .footer {
+        transition: 0.2s;
         background: #1e1d21;
         border-top: 1px solid #D3C3E93F;
         padding: 0.5em 0.9em;
@@ -78,19 +82,38 @@ const {
 
 
     .title {
+        transition: 0.2s;
         font-size: 2rem;
         font-weight: bold;
     }
     .desc {
+        transition: 0.2s;
         font-size: 1.2rem;
         font-style: italic;
         color: #eee;
     }
     .date {
+        transition: 0.2s;
         position: absolute;
-        bottom: 0;
-        right: 4px;
+        bottom: 0.1rem;
+        right: 0.3rem;
         font-size: 0.8rem;
+    }
+    
+    @media (max-width: 730px) {
+        .card-container {
+            width: 40rem;
+            height: 23rem;
+        }
+        .title {
+            font-size: 3rem;
+        }
+        .desc {
+            font-size: 1.7rem;
+        }
+        .date {
+            font-size: 1.3rem;
+        }
     }
 
 </style>

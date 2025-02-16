@@ -176,9 +176,14 @@ ul {
     .doc > h3 {
         font-size: 1.8rem;
     }
-    
     sub {
         font-size: 1.2rem;
+    }
+    .attention {
+        font-size: 3.5rem;
+    }
+    .notice > span > p {
+        font-size: 1.5rem;
     }
 }
 

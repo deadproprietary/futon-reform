@@ -1,15 +1,25 @@
 ---
 import { Image } from 'astro:assets'
 import StickPNG from '../assets/stick.png'
+
+interface Props {
+    hide?: boolean;
+} 
+const  {
+    hide
+} = Astro.props;
+
+let hiddenVar;
+if (hide) {hiddenVar = 'none';} else {hiddenVar = 'flex';}
 ---
 <div id="stickwrapper">
     <Image src={StickPNG} alt="Stick PNG Image" format="png" />
 </div>
 
-<style>
+<style define:vars={{hiddenVar}}>
     div#stickwrapper{
         transition: 0.2s;
-        display: flex;
+        display: var(--hiddenVar);
         justify-content: right;
         z-index: -999;
         position: fixed;

@@ -19,10 +19,10 @@ import "../styles/layout.scss";
 import { ThemeLoader, ThemeSelect, ThemeStyling } from "nottheme";
 import { ClientRouter } from "astro:transitions";
 
+import Sidebar from "../components/Sidebar.astro";
 import Stick from "../components/Stick.astro";
 
 import settings from "../theme";
-import Sidebar from "../components/Sidebar.astro";
 
 interface Props {
 	title: string;
@@ -32,7 +32,9 @@ interface Props {
 	cover?: string;
 
 	largeTitle?: boolean;
-	showDescription?: boolean;
+	hideTitle?: boolean;
+	hideStick?: boolean;
+	hideDescription?: boolean;
 }
 
 const {
@@ -43,15 +45,15 @@ const {
 	cover,
 
 	largeTitle,
-	showDescription
+	hideTitle,
+	hideDescription,
+	hideStick
 } = Astro.props;
 
-let largeTitleVar;
-if (largeTitle) {
-	largeTitleVar = '5.5rem';
-} else {
-	largeTitleVar = '3rem';
-}
+let largeTitleVar, hideTitleVar, hideDescVar;
+if (largeTitle) {largeTitleVar = '5.5rem';} else {largeTitleVar = '3rem';}
+if (hideTitle) {hideTitleVar = "none";} else {hideTitleVar = 'visible';}
+if (hideDescription) {hideDescVar = "none";} else {hideDescVar = 'visible';}
 
 const descPosX = (title.length / 2.1).toString() + 'rem';
 
@@ -90,7 +92,7 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 				</div>
 			</div>
 		</div>
-		<Stick />
+		<Stick hide={hideStick}/>
 		<script>
 			let allCheckboxes = document.querySelectorAll('input[type=checkbox]');
 
@@ -103,18 +105,20 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 	</body>
 </html>
 
-<style define:vars={{largeTitleVar, descPosX}}>
+<style define:vars={{hideTitleVar, hideDescVar, largeTitleVar, descPosX}}>
 	#title-desc {
 		display: flex;
 		flex-direction: column;
 	}
 	h1.title {
 		font-size: var(--largeTitleVar);
+		display: var(--hideTitleVar);
 		hyphens: none;
 		word-break: keep-all;
 	}
 	.description {
 		font-size: 1.2rem;
+		display: var(--hideDescVar);
 		color: #eee;
 		position: relative;
 		top: -1.1rem;
