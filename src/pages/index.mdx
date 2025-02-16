@@ -2,7 +2,6 @@
 layout: "../layouts/Markdown.astro"
 title: yummypillow
 description: artist, allegedly
-
 largeTitle: true
 
 ---
@@ -10,6 +9,7 @@ import Buttons from '../components/Buttons.astro';
 import RandomTicker from '../components/RandomTicker.svelte';
 import MediaCard from '../components/MediaCard.astro';
 import mediaImage from "/public/placeholder.png";
+import "../styles/index.scss";
 
 <span id="ticker">*...is{}**<RandomTicker client:only="svelte"/>***</span>
 ___
@@ -38,3 +38,5 @@ thanks, and let’s draw.
 ___
 
 <Buttons />
+
+
