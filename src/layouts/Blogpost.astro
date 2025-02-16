@@ -15,7 +15,10 @@ const oldThreshold = 365 * 24 * 60 * 60 * 1000;
 let old = Date.now() - date.getTime() > oldThreshold;
 if (ignoreAgeWarning) old = false;
 ---
-
+<head>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+</head>
 <Layout
     title={title}
     description={description}
