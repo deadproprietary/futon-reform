@@ -9,6 +9,7 @@ import Buttons from '../components/Buttons.astro';
 import RandomTicker from '../components/RandomTicker.svelte';
 import MediaCard from '../components/MediaCard.astro';
 import mediaImage from "/public/placeholder.png";
+import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
 
 <span id="ticker">*...is{}**<RandomTicker client:only="svelte"/>***</span>
@@ -39,4 +40,5 @@ ___
 
 <Buttons />
 
+<span id="buildinfo">currently running commit <Commit/></span> 
 

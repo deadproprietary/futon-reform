@@ -1,5 +1,6 @@
 import type {APIContext, ImageMetadata} from "astro";
 import { getCollection } from "astro:content";
+import * as child_process from "node:child_process";
 
 export function getBaseURL(context?: APIContext) {
     let baseUrl = import.meta.env.PROD
@@ -14,3 +15,8 @@ export async function blogPosts() {
         (post) => post.data.wip !== true || !import.meta.env.PROD
     );
 }
+export const longhash = child_process.execSync("git rev-parse HEAD").toString().trim();
+export const shorthash = child_process.execSync("git rev-parse --short HEAD").toString().trim();
+export const commitMsg = child_process.execSync(`git show -s --oneline ${longhash}`).toString().trim().substring(8);
+
+export const date = new Date().toISOString().substring(0,19).replace("T",", ") + " UTC";
