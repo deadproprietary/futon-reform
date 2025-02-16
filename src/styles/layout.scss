@@ -49,6 +49,7 @@ body {
     flex-direction: column;
 
     .doc {
+
         max-width: 40.2rem;
         width: 100%;
         word-break: break-word;
@@ -67,20 +68,23 @@ h1, h3, p, a  {
 .doc h2 {
     font-size: 2.2rem;
     margin-bottom: 0.4rem;
+    transition: 0.1s;
 }
 
 .doc h3{
-    font-size: 1.35rem !important;
+    font-size: 1.35rem;
+    transition: 0.1s;
 }
 
 .doc p{
     color: #eee;
-    font-size: 1.05rem !important;
+    font-size: 1.05rem;
     margin-bottom: 0.7rem;
+    transition: 0.23s;
 }
 
 a {
-    transition: 0.1s;
+
     transition-property: background;
     color: inherit;
     border-radius: 8px;
@@ -163,6 +167,18 @@ ul {
 @media (max-width:730px) {
     :root {
         font-size: clamp(0.5rem, 2vw, 1rem);
+    }
+    
+    .doc > p, .doc > a, .doc > ul, .doc > ol {
+        font-size: 1.5rem;
+    }
+    
+    .doc > h3 {
+        font-size: 1.6rem;
+    }
+    
+    sub {
+        font-size: 1.2rem;
     }
 }
 
