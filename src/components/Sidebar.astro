@@ -227,10 +227,10 @@
                 drop-shadow(0px -1px 0px #d3c3e970);
     }
     .sidebar-input input:hover ~ .sidebar-arrow {
-        opacity: 1%;
+        opacity: 0;
     }
     .sidebar-input input[type="checkbox"]:checked ~ .sidebar-arrow {
-        opacity: 1%;
+        opacity: 0;
     }
 
     .linktext {
@@ -245,7 +245,7 @@
         writing-mode: sideways-lr;
         transform: translateY(-50%);
         letter-spacing: -0.05rem;
-        opacity: 1%;
+        opacity: 0;
         z-index: 100;
         filter: drop-shadow(0px 1px 0px #d3c3e990)
                 drop-shadow(1px 0px 0px #d3c3e990)
@@ -297,6 +297,50 @@
     @media (max-width: 730px) {
         .sidebar-protip {
             visibility: hidden;
+        }
+        
+        /* hover */
+        .sidebar-input input:hover ~ .sidebar-pusher {
+            width: 0;
+        }
+        .sidebar-input input:hover ~ .sidebar-button {
+            width: 7px;
+            filter: drop-shadow(0px 0px 8px #d3c3e9);
+        }
+        .sidebar-input input:hover ~ .buttonline1,
+        .sidebar-input input:hover ~ .buttonline2,
+        .sidebar-input input:hover ~ .buttonline3,
+        .sidebar-input input:hover ~ .buttonline4 {
+            left: 5px;
+            animation-name: "mover";
+            animation-duration: var(--lineduration);
+            animation-fill-mode: backwards;
+            animation-iteration-count: infinite;
+            animation-delay: calc((var(--lineduration)/4) * var(--i) - 3s);
+            -webkit-animation: mover var(--lineduration) backwards infinite;
+            -webkit-animation-delay: calc((var(--lineduration)/4) * var(--i) - 3s);
+        }
+        .sidebar-input input:hover ~ .sidebar-arrow {
+            opacity: 100%;
+        }
+        .sidebar-input input:hover ~ .linktext {
+            opacity: 0;
+            left: 0;
+        }
+        
+        /* checked */
+        .sidebar-input input[type="checkbox"]:checked ~ .sidebar-button {
+            filter: drop-shadow(0px 0px 14px rgba(211, 195, 233, 0.97));
+        }
+        .sidebar-input input[type="checkbox"]:checked ~ .buttonline1,
+        .sidebar-input input[type="checkbox"]:checked ~ .buttonline2,
+        .sidebar-input input[type="checkbox"]:checked ~ .buttonline3,
+        .sidebar-input input[type="checkbox"]:checked ~ .buttonline4 {
+            left: 268px;
+            animation-name: "mover2";
+            animation-duration: calc(var(--lineduration)/2);
+            animation-delay: calc((var(--lineduration)/8) * var(--i) - 3s);
+            -webkit-animation-name: mover2;
         }
     }
 </style>
