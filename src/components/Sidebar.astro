@@ -364,12 +364,19 @@
         }
     });
     window.addEventListener("touchend",function(e){
-        let threshold = 100; 
-        if(start && !document.getElementById('sidebartoggle').checked){
+        let threshold = 80; //px
+        if(start && !document.getElementById('sidebartoggle').checked) {
             let end = e.changedTouches.item(0).clientX;
-            if(end > start + threshold ){
+            if (end > start + threshold) {
+                document.getElementById('sidebartoggle').click();
+            }
+        } 
+        else if (start && document.getElementById('sidebartoggle').checked) {
+            let end = e.changedTouches.item(0).clientX;
+            if(end < start - threshold ){
                 document.getElementById('sidebartoggle').click();
             }
         }
+        
     });
 </script>
