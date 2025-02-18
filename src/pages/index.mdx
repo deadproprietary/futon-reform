@@ -8,12 +8,14 @@ hideDescription: true
 ---
 import Buttons from '../components/Buttons.astro';
 import RandomTicker from '../components/RandomTicker.svelte';
+import RandomTickerNoJS from '../components/RandomTickerNoJS.svelte';
 import MediaCard from '../components/MediaCard.astro';
 import mediaImage from "/public/placeholder.png";
 import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
 
-<span id="ticker">*...is{}**<RandomTicker client:only="svelte"/>***</span>
+<span id="ticker">*...is* ***<span id="tickertext"></span>*** <noscript>***<RandomTickerNoJS/>***</noscript> </span>
+<RandomTicker client:only="svelte"/>
 ___
 
 hi. i'm **pillow**.  

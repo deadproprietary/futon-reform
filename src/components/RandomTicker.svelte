@@ -1,100 +1,25 @@
 <script>
-    const randomlines = [
-        ' kinda crap.',
-        ' a pyramid scheme.',
-        ' not good for your health!',
-        ' low-tier.',
-        ' an airbrush abuser.',
-        ' not doing what they should be doing.',
-        ' jumping into light fierce.',
-        ' punishable on hit.',
-        ' in the mines.',
-        ' caffeine-crashed.',
-        "n't.",
-        ' drawing catgirls!',
-        ' nothing but a concept.',
-        ' in a second-hand store near you!',
-        ' broke as hell.',
-        ' spending too much money on gas.',
-        ' guilty.',
-        ' in training mode.',
-        ' eating slop.',
-        ' a Bolivian 17-year old IT worker.',
-        ' a 60-year old Puerto Rican cigar salesman.',
-        ' a world-class Slovenian bicyclist.',
-        ' the owner of a PS5 game.',
-        ' trans rights bitch',
-        ' banned from this arcade.',
-        ' not even a real pillow.',
-        ' sauceless and cringe!',
-        ' a type of herb.',
-        ' not behind you.',
-        ' dependent on proprietary software.',
-        ' 100% bi.',
-        ' SAND BLAST',
-        ' screaming very loudly.',
-        ' contrary to popular belief, an artist.',
-        ' selling land on the moon!',
-        ' this god damn close to installing Linux.',
-        ' watching the newest season of a TV show.',
-        ' built for rough conditions!',
-        ' a fighting game player!',
-        ' grateful for your help!',
-        ' bad at Blender.',
-        ' that guy.',
-        ' horrible at posting.',
-        ' drawing your OC! like, right now!',
-        ' nice to small cats and kitties.',
-        ' coming to Brazil!',
-        ' coming to all systems in your possession!',
-        ' playing too much Balatro.',
-        ' supporting their locals! Are you?',
-        ' not on X (formerly known as Twitter)!',
-        ' buying another god damned sketchbook again.',
-        ' working on commissions i swear',
-        ' Atkinson Hyperlegibles strongest warrior.',
-        ' here for your entertainment!',
-        ' skipping their pomodoro breaks.',
-        ' +2.',
-        ' -2.',
-        ' getting it twisted.',
-        ' bald.',
-        ' a 5\'8 male with hate in his heart.',
-        ' furthering some sort of agenda.',
-        ' really feeling it!',
-        ' staring at a blank canvas.',
-        ' over there on the bottom right. Y\'see?',
+    import { randomLines } from "../lines"
     
-        ' using Astro!',
-        ' using Clip Studio Paint!',
-        ' using DaVinci Resolve!',
-        ' using OBS Studio!',
-        ' using an XP-Pen Artist 24 Pro!',
-        ' using a Keychron V4!',
-        ' using a Haute42 leverless!',
-        ' using Windows Terminal!',
-        ' using Kdenlive!',
-        ' using PureRef!', 
-        ' using Obsidian!',
-        ' using LibreOffice!',
-        ' using ShareX!',
-        ' using Mozilla Thunderbird!',
-        ' using Voidtools Everything!',
-        ' using Zen Browser!',
-        ' using git!',
-        ' using GitHub Pages!',
-        ' using Bitwarden!',
-        ' using fish-shell!',
-        ' using zoxide!',
-        ' using JetBrains IDEs!',
-        ' using 7-Zip!',
-        ' using VoiceMeeter Banana!',
-        ' using VLC Media Player!',
-        ' using Windhawk!',
-        ' using i3wm!',
-        ' using Fedora!',
-        ' using a crap desk from IKEA.'
-    ]
+    let pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
+    
+    let i=0, isTag, text;
+    
+    function type() {
+        text = pickedLine.slice(0, i++);
+        
+
+        document.getElementById('tickertext').innerHTML = text;
+
+        let char = text.slice(-1);
+        if( char === '<' ) isTag = true;
+        if( char === '>' ) isTag = false;
+
+        if (isTag) return type();
+        setTimeout(type, Math.random()*50);
+    }
+    type();
+    
 </script>
 
-{randomlines[Math.floor(Math.random()*randomlines.length)]}
+<!-- {randomLines[Math.floor( Math.random() * randomLines.length )]} -->

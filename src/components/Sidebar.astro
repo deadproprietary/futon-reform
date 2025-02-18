@@ -198,6 +198,8 @@
         animation-duration: calc(var(--lineduration)/2);
         animation-delay: calc((var(--lineduration)/8) * var(--i) - 3s);
         -webkit-animation-name: mover2;
+        -webkit-animation-duration: calc(var(--lineduration)/2);
+        -webkit-animation-delay: calc((var(--lineduration)/8) * var(--i) - 3s);
     }
     .sidebar-input input[type="checkbox"]:checked ~ .buttonline1,
     .sidebar-input input[type="checkbox"]:checked ~ .buttonline2,
@@ -208,17 +210,14 @@
 
     .sidebar-arrow {
         transition: var(--transition);
+        z-index: 100;
         position: fixed;
-        left: 16px;
+        top: 50vh; left: 16px;
         opacity: 1;
-        top: 50vh;
         transform: translateY(-50%);
-        width: 0;
-        height: 0;
+        width: 0; height: 0;
         border-top: 25px solid transparent;
         border-bottom: 25px solid transparent;
-        z-index: 100;
-
         border-left: 13px solid #131219;
         filter:
                 drop-shadow(1px 0px 0px #d3c3e970)
@@ -261,14 +260,11 @@
         opacity: 100%;
     }
 
-
     .overlay {
         transition: var(--transition);
         position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
+        top: 0; left: 0;
+        height: 100vh; width: 100%;
         background: #000;
         z-index: 97;
         opacity: 0;
@@ -281,7 +277,7 @@
         height: 100vh;
     }
     .sidebar-input input[type="checkbox"]:checked ~ .sidebar-wrapper {
-        left: 0px;
+        left: 0;
     }
     .sidebar-input input[type="checkbox"]:checked ~ .overlay {
         opacity: 40%;
@@ -294,7 +290,7 @@
         left: 0;
     }
     
-    @media (max-width: 730px) {
+    @media (max-width: 730px) or (orientation: portrait) {
         .sidebar-protip {
             visibility: hidden;
         }
@@ -316,7 +312,7 @@
             animation-duration: var(--lineduration);
             animation-fill-mode: backwards;
             animation-iteration-count: infinite;
-            animation-delay: calc((var(--lineduration)/4) * var(--i) - 3s);
+            animation-delay: calc((var(--lineduration) / 4) * var(--i) - 3s);
             -webkit-animation: mover var(--lineduration) backwards infinite;
             -webkit-animation-delay: calc((var(--lineduration)/4) * var(--i) - 3s);
         }
@@ -377,6 +373,5 @@
                 document.getElementById('sidebartoggle').click();
             }
         }
-        
     });
 </script>

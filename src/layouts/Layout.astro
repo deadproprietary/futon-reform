@@ -36,7 +36,6 @@ interface Props {
 	hideStick?: boolean;
 	hideDescription?: boolean;
 }
-
 const {
 	title,
 	path,
@@ -56,7 +55,6 @@ if (hideTitle) {hideTitleVar = "none";} else {hideTitleVar = 'visible';}
 if (hideDescription) {hideDescVar = "none";} else {hideDescVar = 'visible';}
 
 const descPosX = (title.length / 2.1).toString() + 'rem';
-
 ---
 <!doctype HTML>
 <html lang="en">
@@ -94,13 +92,22 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 		</div>
 		<Stick hide={hideStick}/>
 		<script>
+			// uncheck ALL boxes on page load (meant for the sidebar)
 			let allCheckboxes = document.querySelectorAll('input[type=checkbox]');
-
-			// loop on all checkboxes found (trick to iterate on nodeList)
 			[].forEach.call(allCheckboxes, function (checkbox) {
 				checkbox.checked = checkbox.defaultChecked;
 			});
 
+			// get viewport width for reactive stick opacity
+			let r = document.querySelector(':root');
+			function logWidth() {
+				let width = window.innerWidth;
+				let opacity = getComputedStyle(document.body).opacity;
+				r.style.setProperty('--vp-width', width);
+				console.log(width, opacity)
+			}
+			window.addEventListener('resize', logWidth);
+			logWidth();
 		</script>
 	</body>
 </html>
@@ -133,7 +140,6 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 </style>
 
 <style is:global>
-	
 	.doc p, .doc h1, .doc h2, .doc h3, .doc h4, .doc h5, .doc h6, 
 	.doc em, .doc strong, .doc span {
 		font-family: var(--font), sans-serif;
