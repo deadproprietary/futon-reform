@@ -14,7 +14,7 @@ import mediaImage from "/public/placeholder.png";
 import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
 
-<span id="ticker">*...is* ***<span id="tickertext"></span>*** <noscript>***<RandomTickerNoJS client:idle/>***</noscript> </span>
+<span id="ticker">*...is* ***<span id="tickertext"></span>*** <noscript>***<RandomTickerNoJS client:only="svelte"/>***</noscript> </span>
 <RandomTicker client:only="svelte"/>
 ___
 
