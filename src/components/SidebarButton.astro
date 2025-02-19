@@ -1,0 +1,77 @@
+---
+interface Props {
+    link: string;
+    iconName?: string;
+    size?: string;
+}
+
+const {
+    link,
+    iconName,
+    size = "44px"
+} = Astro.props;
+
+import { Icon } from 'astro-icon/components';
+---
+
+<a href={link}>
+    <div class="panel">
+        <div class="panel-center-icon"><Icon name={iconName} size={size}/></div>
+        <h1><slot/></h1>
+    </div>
+</a>
+
+<style define:vars={{size}}>
+    
+    .panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 5px 0 2px;
+        height: 48px;
+    }
+    .panel-center-icon {
+        position: relative;
+        height: 48px;
+        width: 48px;
+    }
+    h1 {
+        font-size: 36px;
+        padding-right: 5px;
+    }
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+        color: #1e1d21;
+        filter: drop-shadow(1px 0px 0.01em #d3c3e9)
+                drop-shadow(0px 1px 0.01em #d3c3e9)
+                drop-shadow(-1px 0px 0.01em #d3c3e9)
+                drop-shadow(0px -1px 0.01em #d3c3e9);
+    }
+    
+    @media (max-height: 560px) {
+        
+        h1 {
+            display: none;
+        }
+        .panel {
+            margin: 0;
+            padding: 0;
+        }
+        svg {
+            height: calc(var(--size) * 1.3);
+            width: calc(var(--size) * 1.3);
+        }
+        
+        a {
+            width: 56px;
+            height: 56px;
+        }
+        
+    }
+    
+</style>

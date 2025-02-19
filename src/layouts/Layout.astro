@@ -82,12 +82,13 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 			</div>
 			<div id="main-container">
 				<div id="spacer" style="min-width: 40.2rem; height: 0; position: relative;">&nbsp;</div>
-				<div class="doc">
+				<div id="doc">
 					<div id="title-desc">
 						<h1 class="title">{title}</h1>
 						<span class="description">{description}</span></div>
 					<slot />
 				</div>
+				
 			</div>
 		</div>
 		<Stick hide={hideStick}/>
@@ -140,8 +141,8 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 </style>
 
 <style is:global>
-	.doc p, .doc h1, .doc h2, .doc h3, .doc h4, .doc h5, .doc h6, 
-	.doc em, .doc strong, .doc span {
+	#doc p, #doc h1, #doc h2, #doc h3, #doc h4, #doc h5, #doc h6, 
+	#doc em, #doc strong, #doc span {
 		font-family: var(--font), sans-serif;
 		line-height: var(--space);
 		letter-spacing: var(--tween);

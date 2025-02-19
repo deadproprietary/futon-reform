@@ -1,5 +1,5 @@
 ---
-
+import SidebarButton from '../components/SidebarButton.astro';
 ---
 
 <div class="sidebar-input">
@@ -14,18 +14,52 @@
             <span class="sidebar-protip">You can<noscript>'t</noscript> toggle this sidebar by pressing Esc<noscript>. lol.</noscript></span>
         </div>
         <div class="sidebar-inner">
-            <div class="panel"><h1><a href="/">Home</a></h1></div>
-            <h3>&nbsp;</h3>
-            <div class="panel"><h1><a href="https://bsky.app/profile/yummypillow.art" class="out">Bluesky</a></h1></div>
-            <div class="panel"><h1><a href="https://artistree.io/yummypillow" class="out">Comms</a></h1></div>
-            <div class="panel"><h1><a href="mailto:yummypillow.art@gmail.com" class="out">E-mail</a></h1></div>
-            <div class="panel"><h1><a href="https://github.com/deadproprietary" class="out">GitHub</a></h1></div>
-            <div class="panel"><h1><a href="https://piczel.tv/watch/yummypillow" class="out">Piczel.tv</a></h1></div>
-            <h3>&nbsp;</h3>
-            <div class="panel"><h1><a href="/faq">FAQ</a></h1></div>
-            <div class="panel"><h1><a href="/blog">Blog</a></h1></div>
-            <div class="panel"><h1><a href="/credits">Credits</a></h1></div>
-
+            
+            <SidebarButton 
+                    link="/"
+                    iconName="mingcute:home-7-fill"
+            >Home</SidebarButton>
+            
+            <hr>
+            
+            <SidebarButton 
+                    link="https://bsky.app/profile/yummypillow.art"
+                    iconName="simple-icons:bluesky"
+                    size="36px"
+            >Bluesky</SidebarButton>
+            <SidebarButton 
+                    link="https://artistree.io/yummypillow"
+                    iconName="mingcute:currency-dollar-2-fill"
+            >Comms</SidebarButton>
+            <SidebarButton 
+                    link="mailto:yummypillow.art@gmail.com"
+                    iconName="mingcute:mailbox-fill"
+            >E-mail</SidebarButton>
+            <SidebarButton 
+                    link="https://github.com/deadproprietary"
+                    iconName="simple-icons:github"
+                    size="36px"
+            >GitHub</SidebarButton>
+            <SidebarButton 
+                    link="https://piczel.tv/watch/yummypillow"
+                    iconName="mingcute:tv-2-fill"
+            >Piczel.tv</SidebarButton>
+            
+            <hr>
+            
+            <SidebarButton 
+                    link="/faq"
+                    iconName="mingcute:question-line"
+            >FAQ</SidebarButton>
+            <SidebarButton 
+                    link="/blog"
+                    iconName="mingcute:paper-line"
+            >Blog</SidebarButton>
+            <SidebarButton 
+                    link="/credits"
+                    iconName="mingcute:user-heart-fill"
+            >Credits</SidebarButton>
+            
         </div>
         <div class="sidebar-footer">
             <p>This site was written from scratch in <a class="out" href="https://astro.build">Astro.</a></p>
@@ -76,10 +110,12 @@
     .sidebar-inner {
         position: absolute;
         display: flex;
-        top: 50vh;
-        transform: translateY(-50%);
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
+        top: 50vh;
+        right: 0;
+        width: 90%;
+        transform: translateY(-50%);
         margin: 8px 8px 0 16px;
     }
 
@@ -99,10 +135,6 @@
         --transition: 0.163s;
         --lineduration: 2s;
         font-family: 'Atkinson Hyperlegible';
-    }
-
-    h1 {
-        font-size: 36px;
     }
     
     h3 {
@@ -287,6 +319,21 @@
     .nottheme-div-sidebar {
         position: absolute !important;
         left: 0;
+    }
+    
+    @media (max-height: 560px){
+        .sidebar-inner {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            row-gap: 5vh;
+            margin: 0;
+        }
+        
+        hr {
+            display: none;
+        }
     }
     
     @media (max-width: 730px) or (orientation: portrait) {

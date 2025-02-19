@@ -20,6 +20,8 @@ if (ignoreAgeWarning) old = false;
     <meta property="og:description" content={description} />
     <meta name='twitter:image' content={cover} />
 </head>
+
+
 <Layout
     title={title}
     description={description}
@@ -27,7 +29,7 @@ if (ignoreAgeWarning) old = false;
     cover={cover}
 >
     <span class="date">Posted&nbsp;<strong>{dateStr}</strong></span>
-    <slot />
+    <slot/>
 </Layout>
 
 <style>
@@ -39,6 +41,5 @@ if (ignoreAgeWarning) old = false;
         top: 5.5rem;
         font-style: italic;
         font-size: 0.8em;
-        
-    }   
+    }
 </style>
