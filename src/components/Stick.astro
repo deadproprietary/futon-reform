@@ -33,9 +33,9 @@ if (hide) {hiddenVar = 'none';} else {hiddenVar = 'flex';}
         }
     }
     
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1300px) {
         div#stickwrapper{
-            opacity: clamp(0.4, calc(var(--vp-width) / 1300), 1);
+            opacity: clamp(0.4, calc((var(--vp-width) - 400) / 1000), 1);
         }
     }
 </style>

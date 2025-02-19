@@ -8,15 +8,28 @@ hideDescription: true
 ---
 import Buttons from '../components/Buttons.astro';
 import RandomTicker from '../components/RandomTicker.svelte';
-import RandomTickerNoJS from '../components/RandomTickerNoJS.svelte';
+import Notice from '../components/Notice.astro';
+import Hider from '../components/Hider.astro';
 import MediaCard from '../components/MediaCard.astro';
 import mediaImage from "/public/placeholder.png";
 import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
+import { randomLines } from "../lines";
 
-<span id="ticker">*...is* ***<span id="tickertext"></span>*** <noscript>***trying to get this to work without JS. Promise.***</noscript> </span>
-<RandomTicker client:only="svelte"/>
+<RandomTicker client:only="svelte"></RandomTicker>
+<span id="ticker">*...is* ***<span id="tickertext"><noscript>here to stay.</noscript></span>***</span>
 ___
+
+<noscript>
+    <Hider hideId="noscript" closetext="who cares">
+        <Notice type="warning">
+            Hey man, I noticed **you don't have JavaScript enabled.**  
+            Don't worry too much about it — the site will still work  
+            **but some features may not work as intended.**
+        </Notice>
+    ___
+    </Hider>
+</noscript>
 
 hi. i'm **pillow**.  
 i like to draw on the internet.  
@@ -43,5 +56,5 @@ ___
 
 <Buttons />
 
-<span id="buildinfo">currently running commit <Commit/></span> 
+<span id="buildinfo"><Commit/></span> 
 

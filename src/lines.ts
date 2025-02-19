@@ -9,7 +9,6 @@ export const randomLines = [
     ' punishable on hit.',
     ' in the mines.',
     ' caffeine-crashed.',
-    "n't.",
     ' drawing catgirls!',
     ' nothing but a concept.',
     ' in a second-hand store near you!',
@@ -62,6 +61,7 @@ export const randomLines = [
     ' really feeling it!',
     ' staring at a blank canvas.',
     ' over there on the bottom right. Y\'see?',
+    ' 5 minutes late.',
 
     ' using Astro!',
     ' using Clip Studio Paint!',

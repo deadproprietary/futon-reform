@@ -7,8 +7,9 @@
     
     function type() {
         text = pickedLine.slice(0, i++);
-        
 
+        
+        
         document.getElementById('tickertext').innerHTML = text;
 
         let char = text.slice(-1);
@@ -21,5 +22,3 @@
     type();
     
 </script>
-
-<!-- {randomLines[Math.floor( Math.random() * randomLines.length )]} -->

@@ -121,11 +121,12 @@ hr {
     margin: 10px 0 10px 0;  
 }
 
-ul {
+ul, ol {
     font-style: italic;
     list-style-type: square;
     li {
         margin-top: 0.3rem;
+        font-size: inherit;
     }
 }
 /* -------- */
@@ -172,7 +173,7 @@ ul {
         font-size: clamp(0.5rem, 2vw, 1rem);
     }
     
-    .doc > p, .doc > a, .doc > ul, .doc > ol {
+    .doc > p, .doc > a, .doc > ul, .doc > ol, .doc > li {
         font-size: 1.7rem;
     }
     

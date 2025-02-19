@@ -3,8 +3,7 @@ const {
     type
 } = Astro.props;
 
-let color;
-let accent;
+let color, accent, shadow;
 let noticeText;
 
 switch (type) {
@@ -12,42 +11,56 @@ switch (type) {
         noticeText = 'Warning';
         accent = '#ef9e24';
         color = '#e67421';
+        shadow = '#301f12';
         break;
     case 'danger':
         noticeText = 'Danger';
         accent = '#ff2929';
         color = '#bc0d0d';
+        shadow = '#301212';
         break;
     default:
         noticeText = 'Notice';
         accent = '#025575';
         color = '#198bbc';
+        shadow = '#121430';
 }
 ---
-
-<div class="notice">
-    <span class="attention">{noticeText}</span>
-    <span class="body"><slot/></span>
+<div class="notice-outer">
+    <div class="notice">
+        <span class="attention">{noticeText}</span>
+        <span class="body"><slot/></span>
+    </div>
 </div>
 
-<style define:vars={{color, accent}}>
+<style define:vars={{color, accent, shadow}}>
+
+    .notice-outer {
+        margin: 0;
+        padding: 0;
+    }
     .notice {
         background: var(--color);
         border-left: 0.5rem solid var(--accent);
         padding: 0.5rem 0.8rem;
         
-        width: 80%;
         margin: 1.5rem;
     }
     .attention {
         color: #eee;
         font-weight: bold;
         font-size: 1.5rem;
-        filter: drop-shadow(0 0 3px #000);
+        filter: drop-shadow(0.05em 0 0.02em var(--shadow))
+                drop-shadow(0 0.05em 0.02em var(--shadow))
+                drop-shadow(-0.05em 0 0.02em var(--shadow))
+                drop-shadow(0 -0.05em 0.02em var(--shadow));
     }
     .body {
         font-size: 1rem;
-        filter: drop-shadow(0 0 2px #000);
+        filter: drop-shadow(0.02em 0 0.03em var(--shadow))
+                drop-shadow(0 0.02em 0.03em var(--shadow))
+                drop-shadow(-0.02em 0 0.03em var(--shadow))
+                drop-shadow(0 -0.02em 0.03em var(--shadow));
 
         p {
             color: #ddd;
@@ -57,6 +70,10 @@ switch (type) {
         }
         :last-child {
             margin-bottom: 0;
+        }
+        ul {
+            margin: 0;
+            color: #ddd;
         }
     }
     @media (max-width:730px) {

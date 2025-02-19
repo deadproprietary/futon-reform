@@ -1,0 +1,62 @@
+---
+const {
+    hideId,
+    closetext
+} = Astro.props;
+---
+
+<input type="checkbox" class="hide-checkbox" id=`hider-${hideId}`>
+<label for=`hider-${hideId}`>{closetext}</label>
+<div>
+    <slot/>
+</div>
+
+
+<style define:vars={{hideId}}>
+    div {
+        transition: 0.2s;
+        border: 0 solid #ff8484;
+        border-radius: 5px;
+    }
+    input, label {
+        transition: 0.2s;
+        position: relative;
+        float: right;
+    }
+    label {
+        z-index: 1;
+        transition: 0.2s;
+        writing-mode: sideways-lr;
+        color: #e8c2c2;
+        font-size: 1.5rem;
+        top: 1rem;
+        filter: drop-shadow(0 0 2px #ff8484);
+    }
+    
+    label:hover + div {
+        transition: 0.2s;
+        pointer-events: none;
+
+        filter: opacity(50%);
+        border: 1px solid #ff8484;
+    }
+    
+    .hide-checkbox {
+        transition: 0.2s;
+        display: none;
+    }
+
+    .hide-checkbox:checked + label,
+    .hide-checkbox:checked + label + div,
+    .hide-checkbox:checked {
+        transition: 0.2s;
+        display: none;
+    }
+    
+    @media (max-width: 730px){
+        label {
+            font-size: 2rem;
+            color: #250303;
+        }
+    }
+</style>
