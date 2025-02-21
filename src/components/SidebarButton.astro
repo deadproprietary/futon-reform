@@ -7,13 +7,12 @@ interface Props {
 
 const {
     link,
-    iconName,
+    iconName = "mingcute:xls-line",
     size = "44px"
 } = Astro.props;
 
 import { Icon } from 'astro-icon/components';
 ---
-
 <a href={link}>
     <div class="panel">
         <div class="panel-center-icon"><Icon name={iconName} size={size}/></div>
@@ -45,12 +44,21 @@ import { Icon } from 'astro-icon/components';
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        
         color: #1e1d21;
-        filter: drop-shadow(1px 0px 0.01em #d3c3e9)
-                drop-shadow(0px 1px 0.01em #d3c3e9)
-                drop-shadow(-1px 0px 0.01em #d3c3e9)
-                drop-shadow(0px -1px 0.01em #d3c3e9);
+        filter: drop-shadow(1px 0px 0px #d3c3e9)
+                drop-shadow(0px 1px 0px #d3c3e9)
+                drop-shadow(-1px 0px 0px #d3c3e9)
+                drop-shadow(0px -1px 0px #d3c3e9);
+   
+    }
+    svg::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
     }
     
     @media (max-height: 560px) {

@@ -16,8 +16,9 @@ import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
 import { randomLines } from "../lines";
 
-<RandomTicker client:only="svelte"></RandomTicker>
+<RandomTicker client:only="svelte"/>
 <span id="ticker">*...is* ***<span id="tickertext"><noscript>here to stay.</noscript></span>***</span>
+
 ___
 
 <noscript>

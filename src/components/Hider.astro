@@ -15,7 +15,6 @@ const {
 <style define:vars={{hideId}}>
     div {
         transition: 0.2s;
-        border: 0 solid #ff8484;
         border-radius: 5px;
     }
     input, label {
@@ -27,10 +26,11 @@ const {
         z-index: 1;
         transition: 0.2s;
         writing-mode: sideways-lr;
-        color: #e8c2c2;
         font-size: 1.5rem;
         top: 1rem;
-        filter: drop-shadow(0 0 2px #ff8484);
+        -webkit-text-stroke: 2px #974444;
+        -webkit-text-fill-color: #e8c2c2;
+        paint-order: stroke;
     }
     
     label:hover + div {
@@ -38,7 +38,7 @@ const {
         pointer-events: none;
 
         filter: opacity(50%);
-        border: 1px solid #ff8484;
+        box-shadow: #ff9494 0 0 6px;
     }
     
     .hide-checkbox {

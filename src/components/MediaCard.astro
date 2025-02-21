@@ -14,13 +14,12 @@ switch (float) {
         padVarRight = "0";
 }
 
-import { Image } from "astro:assets";
 ---
 
 <aside>
     <div class="media-card">
-        <Image 
-            src={image}
+        <img
+            src={image.src}
             alt={alt}
             title={alt}
         />

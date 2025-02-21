@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import StickPNG from '../assets/stick.png'
 
 interface Props {
@@ -13,7 +12,7 @@ let hiddenVar;
 if (hide) {hiddenVar = 'none';} else {hiddenVar = 'flex';}
 ---
 <div id="stickwrapper">
-    <Image src={StickPNG} alt="Stick PNG Image" format="png" />
+    <img src={StickPNG.src} alt="Stick PNG Image"/>
 </div>
 
 <style define:vars={{hiddenVar}}>

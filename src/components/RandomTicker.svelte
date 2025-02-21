@@ -1,14 +1,11 @@
+
 <script>
     import { randomLines } from "../lines"
     
     let pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
     
     let i=0, isTag, text;
-
-    function clearElement(elementID)
-    {
-        document.getElementById(elementID).innerHTML = "";
-    }
+    
     function type() {
         text = pickedLine.slice(0, i++);
 

@@ -8,6 +8,20 @@
   color: #625e77;
 }
 
+#ticker {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 1em;
+  top: 5.5em;
+  z-index: 1;
+  color: #a597bd;
+  filter: drop-shadow(0.5px -0.5px 0px #1e1d21)
+          drop-shadow(-0.5px 0.5px 0px #1e1d21)
+          drop-shadow(-0.5px -0.5px 0px #1e1d21)
+          drop-shadow(0.5px 0.5px 0px #1e1d21)
+          drop-shadow(0px 0px 3px #1e1d21);
+}
+
 @media (max-width: 730px) {
   #buildinfo {
     font-size: 1.1rem;
