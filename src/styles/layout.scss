@@ -52,7 +52,6 @@ body {
     flex-direction: column;
 
     #doc {
-
         max-width: 40.2rem;
         width: 100%;
         word-break: break-word;
@@ -121,11 +120,19 @@ hr {
 
 ul, ol {
     font-style: italic;
-    list-style-type: square;
+    color: #eee;
     li {
         margin-top: 0.3rem;
         font-size: inherit;
     }
+}
+ul {
+    list-style-type: square;
+}
+
+center {
+    text-align: center;
+    color: inherit;
 }
 /* -------- */
 

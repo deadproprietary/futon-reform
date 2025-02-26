@@ -1,0 +1,41 @@
+#outer-container {
+  max-width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(1.4rem,1.2vw,2.5rem);
+}
+
+ul, ol, li {
+  line-height: 2rem;
+  font-style: normal;
+  list-style-position: outside;
+  list-style-type: decimal-leading-zero;
+}
+
+li,
+li > li{
+  margin-bottom: 1.4rem;
+}
+
+li > ul {
+  margin-top: 1.4rem;
+}
+
+.title {
+  position: relative;
+  left: -10%;
+  word-break: keep-all !important;
+  white-space: nowrap !important;
+}
+
+li::marker {
+    font-weight: bold;
+}
+
+@media (max-width:730px) {
+  #outer-container {
+    max-width: inherit;
+    left: inherit;
+    transform: translateX(0);
+  }
+}

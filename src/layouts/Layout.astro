@@ -74,12 +74,10 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 
 	<body class="nottheme">
 		<ThemeLoader settings={settings} />
+		<Sidebar>
+			<ThemeSelect settings={settings} />
+		</Sidebar>
 		<div id="outer-container">
-			<div id="sidebar">
-				<Sidebar>
-					<ThemeSelect settings={settings} />
-				</Sidebar>
-			</div>
 			<div id="main-container">
 				<div id="spacer" style="min-width: 40.2rem; height: 0; position: relative;">&nbsp;</div>
 				<div id="doc">
@@ -142,7 +140,7 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 
 <style is:global>
 	#doc p, #doc h1, #doc h2, #doc h3, #doc h4, #doc h5, #doc h6, 
-	#doc em, #doc strong, #doc span, #sidebar ~ h3 {
+	#doc em, #doc strong, #doc span {
 		font-family: var(--font), sans-serif;
 		line-height: var(--space);
 		letter-spacing: var(--tween);
