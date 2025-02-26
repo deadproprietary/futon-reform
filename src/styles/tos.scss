@@ -1,3 +1,14 @@
+@keyframes target-attention {
+  0% { background-color: rgba(yellow, 0.8); color: black;}
+  20% { background-color: rgba(yellow, 1.0); color: black;}
+  100% { background-color: rgba(lightgoldenrodyellow, 0.1); color: inherit;}
+}
+
+@keyframes target-blink {
+  0% { background-color: rgba(lightgoldenrodyellow, 0.15); color: inherit}
+  100% { background-color: rgba(lightgoldenrodyellow, 0.1); }
+}
+
 #outer-container {
   max-width: 100%;
   left: 50%;
@@ -6,7 +17,7 @@
 }
 
 ul, ol, li {
-  line-height: 2rem;
+  line-height: 1.8rem;
   font-style: normal;
   list-style-position: outside;
   list-style-type: decimal-leading-zero;
@@ -31,11 +42,66 @@ li > ul {
 li::marker {
     font-weight: bold;
 }
+details {
+  border-radius: 8px;
+  padding: 0 0.5rem;
+}
+details summary {
+  cursor: pointer;
+}
+.drawlist {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  flex: 1;
+  padding-bottom: 0.5rem;
+}
+.willdraw, .willnotdraw {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  background: #2c2631;
+  padding: 0.5rem;
+  border-radius: 8px;
+
+}
+.willdraw li, .willnotdraw li {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+}
+.drawlist li {
+  list-style: disc inside;
+  position: relative;
+  left: 0;
+
+}
+
+#doc a:hover:not([name^=""]):not(:target) {
+  background-color: transparent;
+}
+
+*:target {
+  animation: target-attention 2.1s, target-blink 1.8s infinite 2.1s ease-in;
+  color: inherit;
+}
 
 @media (max-width:730px) {
   #outer-container {
     max-width: inherit;
     left: inherit;
     transform: translateX(0);
+  }
+  .drawlist {
+    flex-direction: column;
+  }
+  .willdraw li, .willnotdraw li {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
   }
 }
