@@ -3,11 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import BlogCard from "../components/BlogCard.astro";
 import { blogPosts } from "../utils";
 
-
 const sorted = (await blogPosts()).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 ---
+<head>
+    <meta property="og:image" content="/favicon.png" />
+</head>
 
 <Layout title="blog" description="the yapper">
     <div class="blog-container">
