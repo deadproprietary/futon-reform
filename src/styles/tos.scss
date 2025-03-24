@@ -1,12 +1,12 @@
 @keyframes target-attention {
-  0% { background-color: rgba(yellow, 0.8); color: black;}
-  20% { background-color: rgba(yellow, 1.0); color: black;}
-  100% { background-color: rgba(lightgoldenrodyellow, 0.1); color: inherit;}
+  0% { background-color: rgba(lavender, 1); color: black;}
+  20% { background-color: rgba(lavender, 1.0); color: black;}
+  100% { background-color: rgba(#2e2d32, 1); color: inherit;}
 }
 
 @keyframes target-blink {
-  0% { background-color: rgba(lightgoldenrodyellow, 0.15); color: inherit}
-  100% { background-color: rgba(lightgoldenrodyellow, 0.1); }
+  0% { background-color: rgba(#34323a, 1); color: inherit}
+  100% { background-color: rgba(#2e2d32, 1); }
 }
 
 #outer-container {
@@ -16,20 +16,40 @@
   font-size: clamp(1.4rem,1.2vw,2.5rem);
 }
 
-ul, ol, li {
+#tableofcontents {
+  background: #2c2631;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  margin-bottom: 1rem;
+  
+  strong {
+    font-size: 1.2rem;
+  }
+  code {
+    color: #d3c3e9;
+    text-decoration: underline;
+    margin-bottom: 0;
+  }
+}
+
+ol, li {
   line-height: 1.8rem;
   font-style: normal;
   list-style-position: outside;
-  list-style-type: decimal-leading-zero;
+  list-style-type: decimal;
+}
+
+ol li ul {
+  margin-top: 1rem;
+}
+
+ol li ul li {
+  list-style-type: disc;
 }
 
 li,
 li > li{
   margin-bottom: 1.4rem;
-}
-
-li > ul {
-  margin-top: 1.4rem;
 }
 
 .title {
@@ -41,6 +61,7 @@ li > ul {
 
 li::marker {
     font-weight: bold;
+  font-size: 1.3rem;
 }
 details {
   border-radius: 8px;
@@ -48,6 +69,7 @@ details {
 }
 details summary {
   cursor: pointer;
+  text-decoration: underline dashed 2px palevioletred;
 }
 .drawlist {
   display: flex;
@@ -82,7 +104,7 @@ details summary {
 
 }
 
-#doc a:hover:not([name^=""]):not(:target) {
+#doc a:hover:not(a[title*=" "]) {
   background-color: transparent;
 }
 
