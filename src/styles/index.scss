@@ -1,3 +1,10 @@
+@use "colors";
+
+@keyframes ticker-blink {
+  0%, 100% {border-right: solid rgba(colors.$gruvbox-fg, 255) 4px;}
+  50% {border-right: solid rgba(colors.$gruvbox-fg, 0) 4px;}
+}
+
 .description {
   display: none;
 }
@@ -20,6 +27,11 @@
           drop-shadow(-0.5px -0.5px 0px #1e1d21)
           drop-shadow(0.5px 0.5px 0px #1e1d21)
           drop-shadow(0px 0px 3px #1e1d21);
+}
+
+#tickertext {
+  border-right: solid transparent 4px;
+  animation: ticker-blink 1s infinite steps(1, end);
 }
 
 @media (max-width: 730px) {

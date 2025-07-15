@@ -1,4 +1,9 @@
 ---
+/**
+    MediaCard component
+    Main method of displaying images in the doc element.
+    Can be aligned left or right via variables. Will default to center.
+*/
 const {
     image, footer, alt, width, height, float
 } = Astro.props;
@@ -13,7 +18,6 @@ switch (float) {
         padVarLeft = "1rem";
         padVarRight = "0";
 }
-
 ---
 
 <aside>

@@ -1,0 +1,22 @@
+---
+/**
+    Buttons component
+    Code for mapping out each individual Button component in a container element.
+    Thank you notnite.
+    */
+import Button from './Button.astro';
+import { buttons } from "./Buttons";
+---
+
+<div class="button-container">
+    {buttons.map(button => <Button {...button} />)}
+</div>
+
+<style>
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        gap: 0.22rem;
+        flex-wrap: wrap;
+    }
+</style>

@@ -1,0 +1,50 @@
+---
+/**
+    Button component
+    Code for producing each individual button element.
+    Thank you notnite.
+*/
+import type { Button } from "./Buttons";
+type Props = Button;
+const { img, alt, link } = Astro.props;
+---
+
+{
+    (() => {
+        const button = (
+            <img
+                src={`/buttons/${img}`}
+                alt={alt}
+                class:list={[
+                    "button",
+                    link == null && "buttonWrapper"
+                ]}
+            />
+        );
+            
+        if (link != null) {
+            return (
+                <a class="button" href={link}>{button}</a>
+                );
+            } else {
+                return button;
+            }
+        })()
+    }
+
+<style>
+    .button {
+        position: relative;
+        width: 5.5rem;
+        height: 1.938rem;
+        image-rendering: pixelated;
+    }
+    a {
+        display: block;
+        width: 0;
+        height: 0;
+    }
+    a:hover {
+        background: none;
+    }
+</style>

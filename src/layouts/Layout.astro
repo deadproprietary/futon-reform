@@ -19,7 +19,7 @@ import "../styles/layout.scss";
 import { ThemeLoader, ThemeSelect, ThemeStyling } from "nottheme";
 import { ClientRouter } from "astro:transitions";
 
-import Sidebar from "../components/Sidebar.astro";
+import Sidebar from "../components/Sidebar/Sidebar.astro";
 import Stick from "../components/Stick.astro";
 
 import settings from "../theme";
@@ -89,24 +89,7 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 			</div>
 		</div>
 		<Stick hide={hideStick}/>
-		<script>
-			// uncheck ALL boxes on page load (meant for the sidebar)
-			let allCheckboxes = document.querySelectorAll('input[type=checkbox]');
-			[].forEach.call(allCheckboxes, function (checkbox) {
-				checkbox.checked = checkbox.defaultChecked;
-			});
-
-			// get viewport width for reactive stick opacity
-			let r = document.querySelector(':root');
-			function logWidth() {
-				let width = window.innerWidth;
-				let opacity = getComputedStyle(document.body).opacity;
-				r.style.setProperty('--vp-width', width);
-				console.log(width, opacity)
-			}
-			window.addEventListener('resize', logWidth);
-			logWidth();
-		</script>
+		
 	</body>
 </html>
 

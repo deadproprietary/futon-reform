@@ -1,4 +1,9 @@
 ---
+/** 
+    Stick component
+    A component to display an image element in the bottom right. Hello!
+*/
+
 import StickPNG from '../assets/stick.png'
 
 interface Props {
@@ -7,6 +12,7 @@ interface Props {
 const  {
     hide
 } = Astro.props;
+
 
 let hiddenVar;
 if (hide) {hiddenVar = 'none';} else {hiddenVar = 'flex';}
@@ -38,3 +44,22 @@ if (hide) {hiddenVar = 'none';} else {hiddenVar = 'flex';}
         }
     }
 </style>
+
+<script>
+    // uncheck ALL boxes on page load (meant for the sidebar)
+    let allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+    [].forEach.call(allCheckboxes, function (checkbox) {
+        checkbox.checked = checkbox.defaultChecked;
+    });
+
+    // get viewport width for reactive stick opacity
+    let r = document.querySelector(':root');
+    function logWidth() {
+        let width = window.innerWidth;
+        let opacity = getComputedStyle(document.getElementById("stickwrapper")).opacity;
+        r.style.setProperty('--vp-width', width);
+        console.log(width, opacity) //DEBUG
+    }
+    window.addEventListener('resize', logWidth);
+    logWidth();
+</script>
