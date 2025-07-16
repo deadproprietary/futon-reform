@@ -59,7 +59,7 @@ switch (type) {
     }
     .attention {
         -webkit-text-fill-color: #eee;
-        -webkit-text-stroke: 4px var(--shadow);
+        -webkit-text-stroke: 0.25rem var(--shadow);
         paint-order: stroke;
         
         font-weight: bold;
@@ -67,14 +67,14 @@ switch (type) {
     }
     .body {
         -webkit-text-fill-color: #eee;
-        -webkit-text-stroke: 2px var(--shadow);
+        -webkit-text-stroke: 0.125rem var(--shadow);
         paint-order: stroke;
 
         p {
            font-size: 1.2rem !important;
         }
         a:hover {
-            filter: drop-shadow(0 0 0px #00000000) !important;
+            filter: drop-shadow(0 0 0 #00000000) !important;
         }
         :last-child {
             margin-bottom: 0;

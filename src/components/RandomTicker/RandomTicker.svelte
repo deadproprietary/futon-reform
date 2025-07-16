@@ -9,27 +9,36 @@
     import { randomLines } from "./lines.ts"
     
     let pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
-    
-    let i=0, isTag, text;
+    let i=0, text;
+    let t = document.getElementById('tickertext');
     
     setTimeout(() => {type();}, 600);
+
+    function erase() {
+        t.innerHTML = '';
+        pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
+        text = '';
+        i = 0;
+        t.classList.remove('tickertext-highlight');
+        t.classList.add('tickertext-normal');
+        setTimeout(() => {type();}, 900);
+    }
+    
+    function highlight() {
+        t.classList.remove('tickertext-normal');
+        t.classList.add('tickertext-highlight');
+    }
     
     function type() {
         text = pickedLine.slice(0, i++);
 
-        document.getElementById('tickertext').innerHTML = text;
-
-        let char = text.slice(0);
-        if( char === '<' ) isTag = true;
-        if( char === '>' ) isTag = false;
-
-        if (isTag) return type();
-        let tickerTimeout = setTimeout(type, 40+Math.random()*30);
+        t.innerHTML = text;
+        
+        let tickerTimeout = setTimeout(type, 40+Math.random()*60);
         if (text === pickedLine) {
             clearTimeout(tickerTimeout);
-            setTimeout(() => {document.getElementById('tickertext').style.animation = 'none';}, 1000);
+            setTimeout(() => {highlight(); setTimeout(() => {erase();}, 280)}, 7500); // this sucks
         }
     }
-    
-    
 </script>
+

@@ -57,6 +57,7 @@
 }
 
 .sidebar-wrapper{
+  overflow-x: hidden;
   transition: var(--transition);
   animation-timing-function: ease-out;
   position: fixed;
@@ -159,9 +160,8 @@
           drop-shadow(0px -0.063rem 0px #d3c3e970);
 }
 .sidebar-input input:hover ~ .sidebar-arrow {
-  opacity: 1;
+  opacity: 0;
   left: 1.625rem;
-  transform: scaleY(0%);
 }
 .sidebar-input input[type="checkbox"]:checked ~ .sidebar-arrow {
   opacity: 0;
@@ -262,7 +262,8 @@
     -webkit-animation-delay: calc((var(--lineduration)/4) * var(--i) - 3s);
   }
   .sidebar-input input:hover ~ .sidebar-arrow {
-    opacity: 100%;
+    opacity: 1;
+    left: 1rem;
   }
   .sidebar-input input:hover ~ .linktext {
     opacity: 0;

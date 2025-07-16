@@ -18,7 +18,7 @@
 
 #tableofcontents {
   background: #2c2631;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   margin-bottom: 1rem;
   
@@ -64,7 +64,7 @@ li::marker {
   font-size: 1.3rem;
 }
 details {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0 0.5rem;
 }
 details summary {
@@ -87,7 +87,7 @@ details summary {
   align-content: center;
   background: #2c2631;
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 
 }
 .willdraw li, .willnotdraw li {
@@ -101,7 +101,6 @@ details summary {
   list-style: disc inside;
   position: relative;
   left: 0;
-
 }
 
 #doc a:hover:not(a[title*=" "]) {
