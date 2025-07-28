@@ -1,0 +1,27 @@
+---
+/**
+    Buttons component
+    Code for mapping out each individual Button component in a container element.
+    Several banks can be defined in Buttons.ts as a const. You can pick specific banks
+    in MDX as a "source" variable with the given const name. Default is "index"
+    Thank you notnite.
+    */
+interface Props { source?: string; }
+const { source = "index" } = Astro.props;
+import * as buttonBank from "./Buttons";
+import Button from './Button.astro';
+
+---
+
+<div class="button-container">
+    {buttonBank[source].map(button => <Button {...button} />)}
+</div>
+
+<style>
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        gap: 0.22rem;
+        flex-wrap: wrap;
+    }
+</style>

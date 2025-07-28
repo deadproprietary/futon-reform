@@ -1,9 +1,14 @@
-@use "colors";
-
+// general purpose layout settings
+// ---------
 // DO NOT EDIT BODY FONT FAMILIES OR BODY FONT SIZE IN THIS DOCUMENT
 // UNLESS EXPLICITLY NECESSARY/FOR STYLISTIC PURPOSES.
-// Please use src/theme.ts, with the defined variables
-// in src/layouts/Layout.astro!!
+// Please use src/theme.ts, with the defined variables in src/layouts/Layout.astro!!
+
+@use "colors";
+
+:root {
+    --vp-width: 600;
+}
 
 html {
     font-synthesis: none;
@@ -23,41 +28,23 @@ body {
     position: relative;
     max-width: 100%;
     overflow-x: hidden;
-    padding-left: 46px;
+    padding-left: 2.875rem;
     display: flex;
     justify-content: left;
 }
 
-#outer-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    max-width: 60rem;
-    padding-left: 10px;
-
-    .heading {
-        display: flex;
-
-        .nottheme-div {
-            position: absolute;
-            right: 0;
-        }
-    }
-}
-
-#main-container {
+#doc {
     position: relative;
     display: flex;
     flex-direction: column;
+    
+    max-width: 40.2rem;
+    width: 100%;
+    word-break: break-word;
+    padding-top: 0.625rem;
+    padding-bottom: 9.375rem;
+    padding-left: 0.625rem;
 
-    #doc {
-        max-width: 40.2rem;
-        width: 100%;
-        word-break: break-word;
-        padding-top: 10px;
-        padding-bottom: 150px;
-    }
 }
 
 /* -------- */
@@ -69,29 +56,34 @@ h1, h3, p, a  {
 #doc h2 {
     font-size: 2.2rem;
     margin-bottom: 0.4rem;
-    transition: 0.1s;
+
 }
 
 #doc h3{
     font-size: 1.35rem;
-    transition: 0.1s;
 }
 
-#doc p{
+#doc p {
     color: #eee;
     font-size: 1.05rem;
     margin-bottom: 0.7rem;
-    transition: 0.23s;
+
+    filter: drop-shadow(0 0 0.188rem colors.$gruvbox-bg);
+}
+
+#doc p:has(+ hr) {
+    margin: 0;
 }
 
 a {
     transition-property: background;
     color: inherit;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     text-decoration: none;
 }
 a:not(.blog-link):hover {
     background: colors.$link-bg;
+    transition: 0.1s;
 
     transition-property: background;
     transition-timing-function: ease-out;
@@ -103,7 +95,7 @@ a[title=" "]::after, a.out::after {
     top: -0.6em;
     left: -0.2em;
     font-size: 60%;
-    filter: drop-shadow(0px 0px 2px lightpink);
+    filter: drop-shadow(0 0 0.125rem lightpink);
 }
 a[title=" "] {
     color: #eee;
@@ -111,10 +103,10 @@ a[title=" "] {
 
 hr {
     color: transparent;
-    height: 1px;
+    height: 0.1rem;
     background: linear-gradient(90deg, rgba(30,29,33,0) 0%, rgba(118,100,129,1) 15%, rgba(118,100,129,1) 85%, rgba(30,29,33,0) 100%);
     border: 0;
-    margin: 10px 0 10px 0;  
+    margin: 0.75rem 0 0.75rem 0;  
 }
 
 ul, ol {
@@ -135,30 +127,11 @@ center {
 }
 /* -------- */
 
-.nottheme-theming {
-    position: absolute;
-    
-    .nottheme-theming-name {
-        font-size: 14px;
-    }
-    .nottheme-theming-select {
-        transition: 0.12s;
-        border-radius: 5px;
-        background: colors.$gruvbox-bg;
-        color: colors.$gruvbox-fg;
-        border: 1px solid colors.$gruvbox-purp;
-        filter: drop-shadow(0px 0px 0px colors.$gruvbox-purp);
-    }
-    .nottheme-theming-select:hover {
-        filter: drop-shadow(0px 0px 2px colors.$gruvbox-fg);
-    }
-}
-
 /* -- media queries -- */
 
 @media (max-width:730px) {
     :root {
-        font-size: clamp(0.5rem, 2vw, 1rem);
+        font-size: clamp(0.2rem, 1.9vw, 1rem);
     }
     
     #doc > p, #doc > a, #doc > ul, #doc > ol, #doc > li {
@@ -181,6 +154,6 @@ center {
 
 @media (min-width: 1921px) {
     :root {
-        font-size: clamp(1rem, 0.9vw, 1.5rem);
+        font-size: clamp(1rem, 0.88vw, 5rem);
     }
 }

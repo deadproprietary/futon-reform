@@ -1,4 +1,8 @@
 ---
+/**
+    Blogpost.astro
+    Layout specifically for blog posts. Handles link metadata (for Discord/Twitter/BlueSky embeds).
+    */
 import Layout from "../layouts/Layout.astro"
 
 interface Props {
@@ -12,6 +16,7 @@ const dateStr = date.toISOString().split("T")[0];
 
 ---
 <head>
+    <meta charset="utf-8" />
     <meta property="twitter:image" content={cover}/>
     <meta property='twitter:title' content={title} />
     <meta property='twitter:description' content={description} />

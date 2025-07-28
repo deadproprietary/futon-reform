@@ -1,3 +1,5 @@
+// if you're reading this, send me your own suggestions. thanks :)
+
 export const randomLines = [
     ' kinda crap.',
     ' a pyramid scheme.',
@@ -29,11 +31,10 @@ export const randomLines = [
     ' not behind you.',
     ' dependent on proprietary software.',
     ' 100% bi.',
-    ' SAND BLAST',
     ' screaming very loudly.',
     ' contrary to popular belief, an artist.',
     ' selling land on the moon!',
-    ' this god damn close to installing Linux.',
+    ' has installed Linux.',
     ' built for rough conditions!',
     ' a fighting game player!',
     ' grateful for your help!',
@@ -43,15 +44,13 @@ export const randomLines = [
     ' drawing your OC! like, right now!',
     ' nice to small cats and kitties.',
     ' coming to Brazil!',
+    ' coming to Australia!',
     ' coming to all systems in your possession!',
-    ' playing too much Balatro.',
     ' supporting their locals! Are you?',
     ' not on X (formerly known as Twitter)!',
-    ' buying another god damned sketchbook again.',
     ' working on commissions i swear',
     ' Atkinson Hyperlegibles strongest warrior.',
     ' here for your entertainment!',
-    ' skipping their pomodoro breaks.',
     ' +2.',
     ' -2.',
     ' getting it twisted.',
@@ -89,9 +88,6 @@ export const randomLines = [
     ' using VoiceMeeter Banana!',
     ' using VLC Media Player!',
     ' using Windhawk!',
-    ' using i3wm!',
     ' using Fedora!',
-    ' using a crap desk from IKEA.'
+    ' using Notepads!',
 ]
-
-// hi if you're reading this you should suggest something to me on discord @ yummypillow :)

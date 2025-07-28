@@ -6,37 +6,27 @@ largeTitle: true
 hideDescription: true
 
 ---
-import Buttons from '../components/Buttons.astro';
-import RandomTicker from '../components/RandomTicker.svelte';
+import Buttons from '../components/Buttons/Buttons.astro';
+import RandomTicker from '../components/RandomTicker/RandomTicker.svelte';
 import Notice from '../components/Notice.astro';
 import Hider from '../components/Hider.astro';
 import MediaCard from '../components/MediaCard.astro';
 import mediaImage from "/public/placeholder.png";
 import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
-import { randomLines } from "../lines";
 
 <RandomTicker client:only="svelte"/>
-<span id="ticker">*...is* ***<span id="tickertext"><noscript>here to stay.</noscript></span>***</span>
+<span id="ticker">*...is* ***<span id="tickertext" class="tickertext-normal"><noscript>here to stay.</noscript></span>***</span>
 
 ___
-
-<noscript>
-    <Hider hideId="noscript" closetext="who cares">
-        <Notice type="warning">
-            Hey man, I noticed **you don't have JavaScript enabled.**  
-            Don't worry too much about it — the site will still work  
-            **but some features may not work as intended.**
-        </Notice>
-    ___
-    </Hider>
-</noscript>
 
 hi. i'm **pillow**.  
 i like to draw on the internet.  
 i use any pronouns online.
 
 this is my website. welcome.
+
+---
 
 looking for my commissions?  
 [**find them right here.**](https://artistree.io/yummypillow " ")  
@@ -46,17 +36,26 @@ looking for my social media?
 [**i mostly only use Bluesky right now.**](https://bsky.app/profile/yummypillow.art ' ')  
 my Discord tag is **yummypillow**.
 
+---
+
+<noscript>
+    <p id="nojs">Javascript is disabled!</p>
+    <p>Some things may look weird or not entirely work, but the site should still be functional.
+        Please contact me if anything breaks!</p>
+
+    ---
+</noscript>
+
 in the future i will use this domain for listing my original characters and works,  
 as well as an image gallery portfolio.
 
 you can find all other links on the left sidebar.  
 open it by clicking the left side of the screen.
 
-thanks, and let’s draw.
 
+thanks, and let’s draw.
 ___
 
 <Buttons />
 
-<span id="buildinfo"><Commit/></span> 
-
+<span id="buildinfo"><Commit/></span>

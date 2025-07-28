@@ -1,0 +1,118 @@
+---
+/**
+     Sidebar component
+     Located to the left of the website layout. Contains all links.
+     This works almost entirely off of CSS aside from some QoL JS.
+ */
+import SidebarButton from './SidebarButton.astro';
+import "./sidebar.scss";
+---
+
+<div class="sidebar-input">
+    <input type="checkbox" id="sidebartoggle" name="sidebarcheck"/>
+    <div class="overlay"/>
+    <div class="sidebar-pusher"/>
+    
+    <div class="sidebar-wrapper">
+        <div class="sidebar-header">
+            <slot/>
+        </div>
+        <div class="sidebar-inner">
+            
+            <SidebarButton 
+                    link="/"
+                    iconName="mingcute:home-7-fill"
+            >Home</SidebarButton>
+            
+            <hr>
+            
+            <SidebarButton 
+                    link="https://bsky.app/profile/yummypillow.art"
+                    iconName="simple-icons:bluesky"
+                    size="2.25rem"
+            >Bluesky</SidebarButton>
+            <SidebarButton 
+                    link="https://artistree.io/yummypillow"
+                    iconName="mingcute:currency-dollar-2-fill"
+            >Comms</SidebarButton>
+            <SidebarButton 
+                    link="mailto:yummypillow.art@gmail.com"
+                    iconName="mingcute:mailbox-fill"
+            >E-mail</SidebarButton>
+            <SidebarButton 
+                    link="https://github.com/deadproprietary"
+                    iconName="simple-icons:github"
+                    size="2.25rem"
+            >GitHub</SidebarButton>
+            
+            <hr>
+            
+            <SidebarButton 
+                    link="/faq"
+                    iconName="mingcute:question-line"
+            >FAQ</SidebarButton>
+            <SidebarButton 
+                    link="/blog"
+                    iconName="mingcute:paper-line"
+            >Blog</SidebarButton>
+            <SidebarButton 
+                    link="/credits"
+                    iconName="mingcute:user-heart-fill"
+            >Credits</SidebarButton>
+            <SidebarButton
+                    link="/tos"
+                    iconName="mingcute:alert-diamond-line"
+            >Terms</SidebarButton>
+        </div>
+        <div class="sidebar-footer">
+            <p>This site was written from scratch in <a class="out" href="https://astro.build">Astro.</a></p>
+            <p>Hosted on GitHub Pages. Thanks for visiting!</p>
+        </div>
+    </div>
+    
+    <div class="sidebar-edge"/>
+    
+    <div class="buttonline1" style="--i:1;"/>
+    <div class="buttonline2" style="--i:2;"/>
+    <div class="buttonline3" style="--i:3;"/>
+    <div class="buttonline4" style="--i:4;"/>
+    
+    <div class="sidebar-arrow" />
+    
+    <div class="linktext"><span class="links">LINKS</span></div>
+</div>
+
+<script>
+    // escape to toggle sidebar
+    document.addEventListener('keydown', function (e) {
+        if (e.code === "Escape") {
+            document.getElementById('sidebartoggle').click();
+        }
+    })
+
+    // mobile swipe to open
+    // https://stackoverflow.com/questions/45648886/swipe-left-right-for-a-webpage
+    let start = null;
+    window.addEventListener("touchstart",function(e){
+        if(e.touches.length === 1){
+            start = e.touches.item(0).clientX;
+        }else{
+            start = null;
+        }
+    });
+    window.addEventListener("touchend",function(e){
+        let threshold = 80; //px
+        if(start && !document.getElementById('sidebartoggle').checked) {
+            let end = e.changedTouches.item(0).clientX;
+            if (end > start + threshold) {
+                document.getElementById('sidebartoggle').click();
+            }
+        } 
+        else if (start && document.getElementById('sidebartoggle').checked) {
+            let end = e.changedTouches.item(0).clientX;
+            if(end < start - threshold ){
+                document.getElementById('sidebartoggle').click();
+            }
+        }
+    });
+</script>

@@ -1,3 +1,6 @@
+// nottheme theming settings
+// https://github.com/NotNite/nottheme
+
 import type { Settings } from "nottheme";
 
 const settings: Settings = {

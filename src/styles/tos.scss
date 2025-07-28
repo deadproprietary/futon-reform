@@ -1,3 +1,6 @@
+// for /tos
+// made to look more "business"-y with large centered text and no fluff.
+
 @keyframes target-attention {
   0% { background-color: rgba(lavender, 1); color: black;}
   20% { background-color: rgba(lavender, 1.0); color: black;}
@@ -9,8 +12,8 @@
   100% { background-color: rgba(#2e2d32, 1); }
 }
 
-#outer-container {
-  max-width: 100%;
+#doc {
+  max-width: 80%;
   left: 50%;
   transform: translateX(-50%);
   font-size: clamp(1.4rem,1.2vw,2.5rem);
@@ -18,7 +21,7 @@
 
 #tableofcontents {
   background: #2c2631;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   margin-bottom: 1rem;
   
@@ -64,12 +67,12 @@ li::marker {
   font-size: 1.3rem;
 }
 details {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0 0.5rem;
 }
 details summary {
   cursor: pointer;
-  text-decoration: underline dashed 2px palevioletred;
+  text-decoration: underline dashed 0.1rem palevioletred;
 }
 .drawlist {
   display: flex;
@@ -87,7 +90,7 @@ details summary {
   align-content: center;
   background: #2c2631;
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 
 }
 .willdraw li, .willnotdraw li {
@@ -101,7 +104,6 @@ details summary {
   list-style: disc inside;
   position: relative;
   left: 0;
-
 }
 
 #doc a:hover:not(a[title*=" "]) {

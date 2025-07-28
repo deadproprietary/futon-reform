@@ -1,4 +1,9 @@
 ---
+/**
+    SidebarButton component
+    Main component used for links in the Sidebar component.
+    Consists of an icon and an <a> link.
+*/
 interface Props {
     link: string;
     iconName?: string;
@@ -8,7 +13,7 @@ interface Props {
 const {
     link,
     iconName = "mingcute:xls-line",
-    size = "44px"
+    size = "2.75rem"
 } = Astro.props;
 
 import { Icon } from 'astro-icon/components';
@@ -28,27 +33,27 @@ import { Icon } from 'astro-icon/components';
         align-items: center;
         width: 100%;
         padding: 0 5px 0 2px;
-        height: 48px;
+        height: 3rem;
     }
     .panel-center-icon {
         position: relative;
-        height: 48px;
-        width: 48px;
+        height: 3rem;
+        width: 3rem;
     }
     h1 {
-        font-size: 36px;
+        font-size: 2.25rem;
         padding-right: 5px;
     }
     svg {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%,-40%);
         color: #1e1d21;
-        filter: drop-shadow(1px 0px 0px #d3c3e9)
-                drop-shadow(0px 1px 0px #d3c3e9)
-                drop-shadow(-1px 0px 0px #d3c3e9)
-                drop-shadow(0px -1px 0px #d3c3e9);
+        filter: drop-shadow(0.063rem 0px 0px #d3c3e9)
+                drop-shadow(0px 0.063rem 0px #d3c3e9)
+                drop-shadow(-0.063rem 0px 0px #d3c3e9)
+                drop-shadow(0px -0.063rem 0px #d3c3e9);
    
     }
     svg::before {
@@ -64,20 +69,27 @@ import { Icon } from 'astro-icon/components';
     @media (max-height: 560px) {
         
         h1 {
-            display: none;
+            position: relative;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 2px 4px;
         }
         .panel {
             margin: 0;
             padding: 0;
+            flex-direction: column;
         }
         svg {
-            height: calc(var(--size) * 1.3);
-            width: calc(var(--size) * 1.3);
+            position: relative;
+            height: 3rem;
+            width: 3rem;
         }
         
         a {
-            width: 56px;
-            height: 56px;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding: 0.4rem 0.6rem 0.9rem 0.6rem;
+            margin: -0.4rem -0.6rem -0.9rem -0.6rem;
         }
         
     }

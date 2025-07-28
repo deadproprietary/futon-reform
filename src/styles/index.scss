@@ -1,3 +1,12 @@
+// for index page
+
+@use "colors";
+
+@keyframes ticker-blink-right {
+  0%, 100% {border-right: solid rgba(colors.$gruvbox-fg, 255) 0.25rem;}
+  50% {border-right: solid rgba(colors.$gruvbox-fg, 0) 0.25rem;}
+}
+
 .description {
   display: none;
 }
@@ -8,6 +17,10 @@
   color: #625e77;
 }
 
+#nojs {
+  color: lightcoral !important;
+}
+
 #ticker {
   font-size: 1.2rem;
   position: absolute;
@@ -15,11 +28,26 @@
   top: 5.5em;
   z-index: 1;
   color: #a597bd;
-  filter: drop-shadow(0.5px -0.5px 0px #1e1d21)
-          drop-shadow(-0.5px 0.5px 0px #1e1d21)
-          drop-shadow(-0.5px -0.5px 0px #1e1d21)
-          drop-shadow(0.5px 0.5px 0px #1e1d21)
-          drop-shadow(0px 0px 3px #1e1d21);
+  filter: drop-shadow(0.031rem -0.031rem 0 #1e1d21)
+          drop-shadow(-0.031rem 0.031rem 0 #1e1d21)
+          drop-shadow(-0.031rem -0.031rem 0 #1e1d21)
+          drop-shadow(0.031rem 0.031rem 0 #1e1d21)
+          drop-shadow(0 0 0.188rem #1e1d21);
+}
+
+.tickertext-normal {
+  border-right: solid transparent 0.25rem;
+  padding-right: 0.063rem;
+  animation: ticker-blink-right 1s infinite steps(1, end);
+}
+
+.tickertext-highlight {
+  border-left: solid rgba(colors.$gruvbox-fg, 255) 0.25rem;
+  border-right: solid transparent 0.25rem;
+  margin-left: -0.25rem;
+  padding-left: 0.063rem;
+  background: #0078d7;
+  color: white;
 }
 
 @media (max-width: 730px) {
