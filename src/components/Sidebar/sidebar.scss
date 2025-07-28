@@ -96,11 +96,11 @@
   height: 100%;
   background: linear-gradient(90deg, rgba(30,29,33,1) 90%, rgba(211,195,233,1) 100%);
   z-index: 98;
-  filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
+  -webkit-filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
 }
 .sidebar-input input:hover ~ .sidebar-edge {
   width: 1.25rem;
-  filter: drop-shadow(0px 0px 0.875rem rgba(211, 195, 233, 0.97));
+  -webkit-filter: drop-shadow(0px 0px 0.875rem rgba(211, 195, 233, 0.97));
 }
 .sidebar-input input[type="checkbox"]:checked ~ .sidebar-edge {
   left: 15.313rem;
@@ -155,7 +155,7 @@
   border-top: 1.563rem solid transparent;
   border-bottom: 1.563rem solid transparent;
   border-left: 0.813rem solid #131219;
-  filter:
+  -webkit-filter:
           drop-shadow(0.063rem 0px 0px #d3c3e970)
           drop-shadow(0px 0.063rem 0px #d3c3e970)
           drop-shadow(-0.063rem 0px 0px #d3c3e970)
@@ -179,8 +179,7 @@
   color: #1e1d21;
   left: -0.125rem;
   top: 50%;
-  writing-mode: sideways-lr;
-  transform: translateY(-50%);
+  transform: translate(-2.3rem,-50%) rotate(-90deg);
   letter-spacing: -0.05rem;
   opacity: 0;
   z-index: 100;
@@ -238,10 +237,10 @@
     color: colors.$gruvbox-fg;
     width: 11rem;
     border: 0.063rem solid colors.$gruvbox-purp;
-    filter: drop-shadow(0 0 0 colors.$gruvbox-purp);
+    -webkit-filter: drop-shadow(0 0 0 colors.$gruvbox-purp);
   }
   .nottheme-theming-select:hover {
-    filter: drop-shadow(0 0 0.138rem colors.$gruvbox-fg);
+    -webkit-filter: drop-shadow(0 0 0.138rem colors.$gruvbox-fg);
   }
 }
 
@@ -268,7 +267,7 @@
   }
   .sidebar-input input:hover ~ .sidebar-edge {
     width: 0.438rem;
-    filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
+    -webkit-filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
   }
   .sidebar-input input:hover ~ .buttonline1,
   .sidebar-input input:hover ~ .buttonline2,
@@ -294,7 +293,7 @@
 
   /* checked */
   .sidebar-input input[type="checkbox"]:checked ~ .sidebar-edge {
-    filter: drop-shadow(0px 0px 0.875rem rgba(211, 195, 233, 0.97));
+    -webkit-filter: drop-shadow(0px 0px 0.875rem rgba(211, 195, 233, 0.97));
   }
   .sidebar-input input[type="checkbox"]:checked ~ .buttonline1,
   .sidebar-input input[type="checkbox"]:checked ~ .buttonline2,
