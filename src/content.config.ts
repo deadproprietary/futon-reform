@@ -1,3 +1,5 @@
+// astro content collection. currently only serves to sort blogposts.
+
 import {z, defineCollection} from "astro:content";
 
 import { glob } from "astro/loaders";

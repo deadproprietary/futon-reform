@@ -1,3 +1,5 @@
+// various typescript utilities used in various places on the site.
+
 import type {APIContext, ImageMetadata} from "astro";
 import { getCollection } from "astro:content";
 import * as child_process from "node:child_process";

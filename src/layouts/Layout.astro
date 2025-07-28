@@ -1,4 +1,10 @@
 ---
+/**
+	Layout.astro
+	General purpose layout and meta head used site-wide.
+	Contains font imports, nottheme imports, transition handling, and page-specific variables.
+	*/
+
 import '@fontsource/atkinson-hyperlegible/400.css';
 import '@fontsource/atkinson-hyperlegible/400-italic.css';
 import '@fontsource/atkinson-hyperlegible/700.css';
@@ -36,6 +42,7 @@ interface Props {
 	hideStick?: boolean;
 	hideDescription?: boolean;
 }
+
 const {
 	title,
 	path,
@@ -76,17 +83,11 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 		<Sidebar>
 			<ThemeSelect settings={settings} />
 		</Sidebar>
-		<div id="outer-container">
-			<div id="main-container">
-				<div id="spacer" style="min-width: 40.2rem; height: 0; position: relative;">&nbsp;</div>
-				<div id="doc">
-					<div id="title-desc">
-						<h1 class="title">{title}</h1>
-						<span class="description">{description}</span></div>
-					<slot />
-				</div>
-				
-			</div>
+		<div id="doc">
+			<div id="title-desc">
+				<h1 class="title">{title}</h1>
+				<span class="description">{description}</span></div>
+			<slot />
 		</div>
 		<Stick hide={hideStick}/>
 		

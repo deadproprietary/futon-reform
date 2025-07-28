@@ -1,3 +1,5 @@
+@use "/src/styles/colors";
+
 @keyframes mover {
   0% {opacity: 100%; transform: translateX(0rem);}
   85% {opacity: 1%;}
@@ -223,11 +225,31 @@
   left: 0;
 }
 
+.nottheme-theming {
+  position: absolute;
+
+  .nottheme-theming-name {
+    font-size: 0.875rem;
+  }
+  .nottheme-theming-select {
+    font-size: 0.875rem;
+    border-radius: 0.313rem;
+    background: colors.$gruvbox-bg;
+    color: colors.$gruvbox-fg;
+    width: 11rem;
+    border: 0.063rem solid colors.$gruvbox-purp;
+    filter: drop-shadow(0 0 0 colors.$gruvbox-purp);
+  }
+  .nottheme-theming-select:hover {
+    filter: drop-shadow(0 0 0.138rem colors.$gruvbox-fg);
+  }
+}
+
 @media (max-height: 560px){
   .sidebar-inner {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 0.625rem;
     row-gap: 5vh;
     margin: 0;

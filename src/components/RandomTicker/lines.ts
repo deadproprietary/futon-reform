@@ -34,7 +34,7 @@ export const randomLines = [
     ' screaming very loudly.',
     ' contrary to popular belief, an artist.',
     ' selling land on the moon!',
-    ' this god damn close to installing Linux.',
+    ' has installed Linux.',
     ' built for rough conditions!',
     ' a fighting game player!',
     ' grateful for your help!',

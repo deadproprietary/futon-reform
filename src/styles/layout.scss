@@ -1,10 +1,10 @@
-@use "colors";
-
+// general purpose layout settings
+// ---------
 // DO NOT EDIT BODY FONT FAMILIES OR BODY FONT SIZE IN THIS DOCUMENT
 // UNLESS EXPLICITLY NECESSARY/FOR STYLISTIC PURPOSES.
-// Please use src/theme.ts, with the defined variables
-// in src/layouts/Layout.astro!!
-// TODO: separate into files depending on use case? (generic #doc, ToS, blogpost etc)
+// Please use src/theme.ts, with the defined variables in src/layouts/Layout.astro!!
+
+@use "colors";
 
 :root {
     --vp-width: 600;
@@ -33,36 +33,18 @@ body {
     justify-content: left;
 }
 
-#outer-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    max-width: 60rem;
-    padding-left: 0.625rem;
-
-    .heading {
-        display: flex;
-
-        .nottheme-div {
-            position: absolute;
-            right: 0;
-        }
-    }
-}
-
-#main-container {
+#doc {
     position: relative;
     display: flex;
     flex-direction: column;
+    
+    max-width: 40.2rem;
+    width: 100%;
+    word-break: break-word;
+    padding-top: 0.625rem;
+    padding-bottom: 9.375rem;
+    padding-left: 0.625rem;
 
-    #doc {
-        max-width: 40.2rem;
-        width: 100%;
-        word-break: break-word;
-        padding-top: 0.625rem;
-        padding-bottom: 9.375rem;
-    }
 }
 
 /* -------- */
@@ -79,15 +61,18 @@ h1, h3, p, a  {
 
 #doc h3{
     font-size: 1.35rem;
-
 }
 
-#doc p{
+#doc p {
     color: #eee;
     font-size: 1.05rem;
     margin-bottom: 0.7rem;
 
     filter: drop-shadow(0 0 0.188rem colors.$gruvbox-bg);
+}
+
+#doc p:has(+ hr) {
+    margin: 0;
 }
 
 a {
@@ -141,26 +126,6 @@ center {
     color: inherit;
 }
 /* -------- */
-
-.nottheme-theming {
-    position: absolute;
-    
-    .nottheme-theming-name {
-        font-size: 0.875rem;
-    }
-    .nottheme-theming-select {
-        font-size: 0.875rem;
-        border-radius: 0.313rem;
-        background: colors.$gruvbox-bg;
-        color: colors.$gruvbox-fg;
-        width: 13rem;
-        border: 0.063rem solid colors.$gruvbox-purp;
-        filter: drop-shadow(0 0 0 colors.$gruvbox-purp);
-    }
-    .nottheme-theming-select:hover {
-        filter: drop-shadow(0 0 0.138rem colors.$gruvbox-fg);
-    }
-}
 
 /* -- media queries -- */
 

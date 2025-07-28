@@ -1,9 +1,13 @@
 ---
+/**
+    Markdown.astro
+    Simple layout for Markdown/MDX files that serves to handle page-specific parameters for use in the main layout.
+    */
 import Layout from "../layouts/Layout.astro"
 ---
 <head>
     <meta property="og:image" content="/favicon.png" />
-    <meta charset="utf-8" />
+    <meta charset="utf-8" /> <!-- this one is important in dev, otherwise some characters will jumble -->
 </head>
 
 <Layout {...Astro.props.frontmatter}>

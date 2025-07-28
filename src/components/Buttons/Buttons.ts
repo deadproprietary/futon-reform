@@ -10,12 +10,15 @@ export type Button = {
     alt: string;
 };
 
-export const buttons: Button[] = [
+export const index: Button[] = [
     // me
     {
         img: "pillow.png",
         alt: "yummypillow.art"
     },
+    
+    /* --- friends --- */
+    
     // notnite
     {
         img: "notnite.png",
@@ -75,6 +78,94 @@ export const buttons: Button[] = [
         img: "zydra.png",
         link: "https://zydra.space/",
         alt: "Zydra"
+    },
+    
+    /* --- software --- */
+    
+    // fedora
+    {
+        img: "fedora2.png",
+        link: "https://fedoraproject.org",
+        alt: "Fedora Linux"
+    },
+    // Krita
+    {
+        img: "krita.png",
+        link: "https://krita.org",
+        alt: "Krita"
+    },
+    // KDE
+    {
+        img: "kde.gif",
+        link: "https://kde.org",
+        alt: "KDE"
+    },
+    // JetBrains
+    {
+        img: "jetbrains.png",
+        link: "https://jetbrains.com",
+        alt: "JetBrains IDEs"
+    },
+    // Moonlight Discord mod
+    {
+        img: "moonlightnow.gif",
+        link: "https://moonlight-mod.github.io/",
+        alt: "Moonlight Mod for Discord"
+    },
+    // Mullvad VPN
+    {
+        img: "mullvad.png",
+        link: "https://mullvad.net/",
+        alt: "Mullvad VPN"
+    },
+    // Thunderbird Mail Client
+    {
+        img: "thunderbird.gif",
+        link: "https://www.thunderbird.net/",
+        alt: "Thunderbird E-mail client"
+    },
+    // uBlock Origin
+    {
+        img: "ubo.png",
+        link: "https://github.com/gorhill/uBlock",
+        alt: "uBlock Origin Ad-blocker"
+    },
+    
+]
+
+/* don't forget to comma the closing bracket before
+
+    // foobar
+    {
+        img: "",
+        link: "",
+        alt: ""
+    }
+
+ */
+
+/* --- credits page --- */
+
+export const credits: Button[] = [
+    // me
+    {
+        img: "pillow.png",
+        alt: "yummypillow.art - that's me!"
+    },
+    // clip studio paint
+    {
+        img: "clipstudiopaint.png",
+        alt: "Clip Studio Paint"
+    },
+    // fedora dark
+    {
+        img: "fedora.png",
+        alt: "Fedora Linux (dark mode)"
+    },
+    // fedora light
+    {
+        img: "fedora2.png",
+        alt: "Fedora Linux (lighter mode)"
     }
 ]
 

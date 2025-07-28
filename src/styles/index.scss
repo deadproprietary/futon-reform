@@ -1,3 +1,5 @@
+// for index page
+
 @use "colors";
 
 @keyframes ticker-blink-right {
@@ -13,6 +15,10 @@
   position: relative;
   font-size: 0.7rem;
   color: #625e77;
+}
+
+#nojs {
+  color: lightcoral !important;
 }
 
 #ticker {

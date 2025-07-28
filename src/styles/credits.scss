@@ -1,6 +1,26 @@
+// for /credits
+
 .doc a {
   font-size: 1.2rem;
   em {
     font-size:0.9rem;
   }
+}
+
+
+#cr-sans-serif, #cr-sans-serif strong, #cr-sans-serif em {
+  font-family: "Atkinson Hyperlegible", sans-serif !important;
+  letter-spacing: 0.02rem !important;
+}
+
+#cr-serif, #cr-serif strong, #cr-serif em {
+  font-family: "Zilla Slab", serif !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.02rem !important;
+}
+
+#cr-monospace, #cr-monospace strong, #cr-monospace em {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 1.08rem !important;
+  letter-spacing: -0.04rem !important;
 }
