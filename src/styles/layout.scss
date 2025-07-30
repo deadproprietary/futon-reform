@@ -68,7 +68,7 @@ h1, h3, p, a  {
     font-size: 1.05rem;
     margin-bottom: 0.7rem;
 
-    filter: drop-shadow(0 0 0.188rem colors.$gruvbox-bg);
+    -webkit-filter: drop-shadow(0 0 0.188rem colors.$gruvbox-bg);
 }
 
 #doc p:has(+ hr) {
@@ -95,7 +95,7 @@ a[title=" "]::after, a.out::after {
     top: -0.6em;
     left: -0.2em;
     font-size: 60%;
-    filter: drop-shadow(0 0 0.125rem lightpink);
+    -webkit-filter: drop-shadow(0 0 0.125rem lightpink);
 }
 a[title=" "] {
     color: #eee;
