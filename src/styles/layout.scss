@@ -28,7 +28,7 @@ body {
     position: relative;
     max-width: 100%;
     overflow-x: hidden;
-    padding-left: 2.875rem;
+    padding-left: 2.875em;
     display: flex;
     justify-content: left;
 }
@@ -38,12 +38,12 @@ body {
     display: flex;
     flex-direction: column;
     
-    max-width: 40.2rem;
-    width: 100%;
+    max-width: 40.2em;
+    width: 95%;
     word-break: break-word;
-    padding-top: 0.625rem;
-    padding-bottom: 9.375rem;
-    padding-left: 0.625rem;
+    padding-top: 0.6em;
+    padding-bottom: 9.5em;
+    padding-left: 0.8em;
 
 }
 
@@ -129,7 +129,7 @@ center {
 
 /* -- media queries -- */
 
-@media (max-width:730px) {
+@media (max-width: 45.625rem) { // 730px on font size 16px
     :root {
         font-size: clamp(0.2rem, 1.9vw, 1rem);
     }
@@ -152,8 +152,8 @@ center {
     }
 }
 
-@media (min-width: 1921px) {
+@media (min-width: 120.063rem) { // 1921px on font size 16px
     :root {
-        font-size: clamp(1rem, 0.88vw, 5rem);
+        font-size: clamp(1rem, 0.88vw, 80px);
     }
 }
