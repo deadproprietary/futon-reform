@@ -1,36 +1,36 @@
 @use "/src/styles/colors";
 
 @keyframes mover {
-  0% {opacity: 100%; transform: translateX(0rem);}
+  0% {opacity: 100%; transform: translateX(0em);}
   85% {opacity: 1%;}
-  100% {opacity: 1%; transform: translateX(0.75rem);}
+  100% {opacity: 1%; transform: translateX(0.75em);}
 }
 @keyframes mover2 {
-  0% {opacity: 100%; transform: translateX(0rem);}
+  0% {opacity: 100%; transform: translateX(0em);}
   85% {opacity: 1%;}
-  100% {opacity: 1%; transform: translateX(1.25rem);}
+  100% {opacity: 1%; transform: translateX(1.25em);}
 }
 
 .sidebar-header {
-  margin: 0.625rem;
+  margin: 0.625em;
+  display: block;
+  height: 2em;
 }
 
 .sidebar-inner {
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  top: 50vh;
   right: 0;
   width: 90%;
-  transform: translateY(-50%);
-  margin: 0.5rem 0.5rem 0 1rem;
+  margin: 0.5em 0.5em 0 1em;
 }
 
 .sidebar-footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
-  margin: 0.5rem;
+  left: 0;
+  margin: 0.5em;
 
   p, a {
     font-size: 0.688rem;
@@ -52,27 +52,26 @@
   width: 0;
 }
 .sidebar-input input:hover ~ .sidebar-pusher {
-  width: 0.813rem;
+  width: 0.813em;
 }
 .sidebar-input input[type="checkbox"]:checked ~ .sidebar-pusher {
-  width: 15.625rem;
+  width: 16em;
 }
 
 .sidebar-wrapper{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   transition: var(--transition);
   animation-timing-function: ease-out;
   position: fixed;
   top: 0;
-  left: -15.625rem;
-  width: 15.625rem;
+  left: -16em;
+  width: 16em;
   height: 100%;
-  display: flex;
   z-index: 99;
-  flex-direction: column;
-  justify-content: space-between;
   background:#1e1d21;
-
 }
 
 /* FUCK */
@@ -82,7 +81,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 3.125rem;
+  width: 2.6rem;
   z-index: 999;
   cursor: e-resize;
 }
@@ -91,29 +90,29 @@
   animation-timing-function: ease-out;
   position: fixed;
   top: 0;
-  left: -0.063rem;
-  width: 0.438rem;
+  left: -0.063em;
+  width: 0.438em;
   height: 100%;
   background: linear-gradient(90deg, rgba(30,29,33,1) 90%, rgba(211,195,233,1) 100%);
   z-index: 98;
   -webkit-filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
 }
 .sidebar-input input:hover ~ .sidebar-edge {
-  width: 1.25rem;
+  width: 1.25em;
   -webkit-filter: drop-shadow(0px 0px 0.875rem rgba(211, 195, 233, 0.97));
 }
 .sidebar-input input[type="checkbox"]:checked ~ .sidebar-edge {
-  left: 15.313rem;
-  width: 1.563rem;
+  left: 15.313em;
+  width: 1.563em;
 }
 
 .buttonline1, .buttonline2, .buttonline3, .buttonline4 {
   transition: var(--transition);
   position: fixed;
   top: 0;
-  left: 0.313rem;
+  left: 0.313em;
   height: 100%;
-  width: 0.063rem;
+  width: 0.063em;
   z-index: 99;
   pointer-events: none;
   background: rgba(211, 195, 233, 0.38);
@@ -129,7 +128,7 @@
 .sidebar-input input:hover ~ .buttonline2,
 .sidebar-input input:hover ~ .buttonline3,
 .sidebar-input input:hover ~ .buttonline4 {
-  left: 1.125rem;
+  left: 1.125em;
   animation-name: "mover2";
   animation-duration: calc(var(--lineduration)/2);
   animation-delay: calc((var(--lineduration)/8) * var(--i) - 3s);
@@ -141,33 +140,33 @@
 .sidebar-input input[type="checkbox"]:checked ~ .buttonline2,
 .sidebar-input input[type="checkbox"]:checked ~ .buttonline3,
 .sidebar-input input[type="checkbox"]:checked ~ .buttonline4 {
-  left: 16.75rem;
+  left: 16.75em;
 }
 
 .sidebar-arrow {
   transition: var(--transition);
   z-index: 100;
   position: fixed;
-  top: 50%; left: 1rem;
+  top: 50%; left: 1em;
   opacity: 1;
   transform: translateY(-50%);
   width: 0; height: 0;
-  border-top: 1.563rem solid transparent;
-  border-bottom: 1.563rem solid transparent;
-  border-left: 0.813rem solid #131219;
-  -webkit-filter:
+  border-top: 1.563em solid transparent;
+  border-bottom: 1.563em solid transparent;
+  border-left: 0.813em solid #131219;
+  filter:
           drop-shadow(0.063rem 0px 0px #d3c3e970)
-          drop-shadow(0px 0.063rem 0px #d3c3e970)
+          drop-shadow(0px 0.063em 0px #d3c3e970)
           drop-shadow(-0.063rem 0px 0px #d3c3e970)
           drop-shadow(0px -0.063rem 0px #d3c3e970);
 }
 .sidebar-input input:hover ~ .sidebar-arrow {
   opacity: 0;
-  left: 1.625rem;
+  left: 1.625em;
 }
 .sidebar-input input[type="checkbox"]:checked ~ .sidebar-arrow {
   opacity: 0;
-  left: 16.438rem;
+  left: 16.438em;
 }
 
 .linktext {
@@ -177,7 +176,7 @@
   font-size: 3rem;
   position: fixed;
   color: #1e1d21;
-  left: -0.125rem;
+  left: -0.125em;
   top: 50%;
   transform: translate(-2.3rem,-50%) rotate(-90deg);
   letter-spacing: -0.05rem;
@@ -187,10 +186,10 @@
 }
 .sidebar-input input:hover ~ .linktext {
   opacity: 100%;
-  left: 0.625rem;
+  left: 0.3em;
 }
 .sidebar-input input[type="checkbox"]:checked ~ .linktext {
-  left: 16.438rem;
+  left: 5.6em;
   opacity: 100%;
 }
 
@@ -206,7 +205,7 @@
 }
 
 .sidebar-input input[type="checkbox"]:checked {
-  left: 15.625rem;
+  left: 16.8rem;
   width: 100%;
   height: 100%;
 }
@@ -232,12 +231,12 @@
   }
   .nottheme-theming-select {
     font-size: 0.875rem;
-    border-radius: 0.313rem;
+    border-radius: 0.313em;
     background: colors.$gruvbox-bg;
     color: colors.$gruvbox-fg;
-    width: 11rem;
-    border: 0.063rem solid colors.$gruvbox-purp;
-    -webkit-filter: drop-shadow(0 0 0 colors.$gruvbox-purp);
+    width: 11em;
+    border: 0.063em solid colors.$gruvbox-purp;
+    filter: drop-shadow(0 0 0 colors.$gruvbox-purp);
   }
   .nottheme-theming-select:hover {
     -webkit-filter: drop-shadow(0 0 0.138rem colors.$gruvbox-fg);
@@ -246,10 +245,11 @@
 
 @media (max-height: 560px){
   .sidebar-inner {
+    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 0.625rem;
+    gap: 0.625em;
     row-gap: 5vh;
     margin: 0;
   }
@@ -266,14 +266,14 @@
     width: 0;
   }
   .sidebar-input input:hover ~ .sidebar-edge {
-    width: 0.438rem;
-    -webkit-filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
+    width: 0.438em;
+    filter: drop-shadow(0px 0px 0.5rem #d3c3e9);
   }
   .sidebar-input input:hover ~ .buttonline1,
   .sidebar-input input:hover ~ .buttonline2,
   .sidebar-input input:hover ~ .buttonline3,
   .sidebar-input input:hover ~ .buttonline4 {
-    left: 0.313rem;
+    left: 0.313em;
     animation-name: "mover";
     animation-duration: var(--lineduration);
     animation-fill-mode: backwards;
@@ -284,7 +284,7 @@
   }
   .sidebar-input input:hover ~ .sidebar-arrow {
     opacity: 1;
-    left: 1rem;
+    left: 1em;
   }
   .sidebar-input input:hover ~ .linktext {
     opacity: 0;
@@ -299,7 +299,7 @@
   .sidebar-input input[type="checkbox"]:checked ~ .buttonline2,
   .sidebar-input input[type="checkbox"]:checked ~ .buttonline3,
   .sidebar-input input[type="checkbox"]:checked ~ .buttonline4 {
-    left: 16.75rem;
+    left: 16.75em;
     animation-name: "mover2";
     animation-duration: calc(var(--lineduration)/2);
     animation-delay: calc((var(--lineduration)/8) * var(--i) - 3s);

@@ -29,15 +29,14 @@ const {
 </a>
 
 <style>
-    .blog-link{
-        width: 0;
-    }
+
     
     .card-container {
         display: flex;
         flex-direction: column;
         height: 17em;
-        width: 30rem;
+        max-width: 30em;
+        width: 100%;
         background: #1e1d21;
         border-radius: 5px;
         margin: 0.5rem;
@@ -96,8 +95,8 @@ const {
     
     @media (max-width: 730px) {
         .card-container {
-            width: 40rem;
-            height: 23rem;
+            width: 95%;
+            max-height: 23em;
         }
         .title {
             font-size: 3rem;
