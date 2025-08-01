@@ -22,7 +22,7 @@ export const index: Button[] = [
     // notnite
     {
         img: "notnite.png",
-        link: "https://www.notnite.com/",
+        link: "https://notnite.com/",
         alt: "notnite"
     },
     // 88x31
@@ -34,7 +34,7 @@ export const index: Button[] = [
     // selene
     {
         img: "gothzip.png",
-        link: "https://www.goth.zip/",
+        link: "https://goth.zip/",
         alt: "Selene"
     },
     // CSP
