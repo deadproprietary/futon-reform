@@ -77,6 +77,7 @@ h1, h3, p, a  {
 
 a {
     transition-property: background;
+    font-weight: bold;
     color: inherit;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -85,10 +86,11 @@ a:not(.blog-link):hover {
     background: colors.$link-bg;
     transition: 0.1s;
 
+
     transition-property: background;
     transition-timing-function: ease-out;
 }
-a[title=" "]::after, a.out::after {
+p a::after {
     content:"\FEFF◹";
     position: relative;
     color: lightpink;

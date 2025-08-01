@@ -5,10 +5,10 @@
     Can be aligned left or right via variables. Will default to center.
 */
 const {
-    image, footer, alt, width, height, float
+    image, footer, alt, width, height, float, border
 } = Astro.props;
 
-let padVarLeft, padVarRight;
+let padVarLeft, padVarRight, borderVar;
 switch (float) {
     case "left":
         padVarLeft = "0";
@@ -17,6 +17,11 @@ switch (float) {
     case "right":
         padVarLeft = "1rem";
         padVarRight = "0";
+}
+if (border == "legacy") {
+    borderVar = "1px #737374 solid";
+} else {
+    borderVar = {border};
 }
 ---
 
@@ -33,7 +38,7 @@ switch (float) {
     </div>
 </aside>
 
-<style define:vars={{float, alt, height, width, padVarLeft, padVarRight}}>
+<style define:vars={{float, alt, height, width, padVarLeft, padVarRight, borderVar}}>
     .media-card {
         position: relative;
         display: flex;
@@ -44,7 +49,7 @@ switch (float) {
         height: var(--height);
         width: max-content;
         
-        border: 1px #737374 solid;
+        border: var(--borderVar);
         
         img {
             height: var(--height);
