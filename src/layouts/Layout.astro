@@ -26,6 +26,7 @@ import { ThemeLoader, ThemeSelect, ThemeStyling } from "nottheme";
 
 import Sidebar from "../components/Sidebar/Sidebar.astro";
 import Stick from "../components/Stick.astro";
+import NoJS from "../components/NoJS.astro";
 import MetaHead from "./MetaHead.astro";
 
 import settings from "../theme";
@@ -69,9 +70,10 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 		<MetaHead title={title} description={description} />
 		<ThemeStyling settings={settings} />
 	</head>
-
+	
 	<body class="nottheme">
 		<ThemeLoader settings={settings} />
+		<NoJS/>
 		<Sidebar>
 			<ThemeSelect settings={settings} />
 		</Sidebar>

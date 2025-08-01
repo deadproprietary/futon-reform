@@ -1,0 +1,53 @@
+---
+/** NoJS component
+    A site-wide ticker that displays if you're not using Javascript.
+    */
+---
+<noscript>
+    <div id="nojs-ticker">
+        <p id="nojs-text">Javascript is disabled. Things will probably not work as intended.</p>
+    </div>
+</noscript>
+
+<style>
+    @keyframes marquee {
+        0%   { transform: translate(0, 0); }
+        100% { transform: translate(-2.2em, 0); }
+    }
+    
+    #nojs-ticker {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 1.6rem;
+        width: calc(100% + 2.2em);
+        background: repeating-linear-gradient(
+        45deg,
+        #453962,
+        #453962 0.8em,
+        #70537f 0.8em,
+        #70537f 1.6em);
+        animation: marquee 7s linear infinite;
+        z-index: 3;
+        filter: drop-shadow(0 0.1em 0.1em rgba(0, 0, 0, 0.8));
+    }
+    
+    #nojs-text {
+        animation: marquee 7s linear infinite reverse;
+        text-align: center;
+        padding-left: 3.4em;
+        margin-top: 0.13em;
+        color: #ff5a51;
+        font-weight: bold;
+        filter: drop-shadow(0 0 0.08em rgba(0, 0, 0, 0.7));
+    }
+    
+    @media (prefers-reduced-motion) {
+        #nojs-ticker, #nojs-text {
+            animation: none;
+            padding-left: 0;
+        }
+    }
+    
+</style>

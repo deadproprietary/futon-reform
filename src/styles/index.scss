@@ -57,3 +57,9 @@
     font-size: 1.1rem;
   }
 }
+@media (prefers-reduced-motion) {
+  .tickertext-normal {
+    animation: none;
+    border-right: solid rgba(colors.$gruvbox-fg, 255) 0.25rem;
+  }
+}
