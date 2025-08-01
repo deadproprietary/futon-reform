@@ -9,14 +9,20 @@
     import { randomLines } from "./lines.ts"
     
     let pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
-    let i=0, text;
+    let i=0, text, c=0;
     let t = document.getElementById('tickertext');
     
     setTimeout(() => {type();}, 600);
 
     function erase() {
         t.innerHTML = '';
-        pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
+        c++;
+        if (c == 13) {
+            pickedLine = " surprised you're still reading these. Got nothing better to do?"
+            // if you're reading this here, i guess you got nothing better to do still.
+        } else {
+            pickedLine = randomLines[Math.floor( Math.random() * randomLines.length )];
+        }
         text = '';
         i = 0;
         t.classList.remove('tickertext-highlight');

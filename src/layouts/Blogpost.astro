@@ -31,6 +31,9 @@ const dateStr = date.toISOString().split("T")[0];
 >
     <span class="date">Posted&nbsp;<strong>{dateStr}</strong></span>
     <slot/>
+    
+    <hr/>
+    <div class="giscus"/>
 </Layout>
 
 <style>
@@ -44,3 +47,19 @@ const dateStr = date.toISOString().split("T")[0];
         font-size: 0.8em;
     }
 </style>
+
+<script src="https://giscus.app/client.js"
+        data-repo="deadproprietary/futon-reform"
+        data-repo-id="R_kgDON6JC7A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDON6JC7M4Ctq2r"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="catppuccin_mocha"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>

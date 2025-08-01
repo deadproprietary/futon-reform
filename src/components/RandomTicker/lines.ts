@@ -61,6 +61,7 @@ export const randomLines = [
     ' staring at a blank canvas.',
     ' over there on the bottom right. Y\'see?',
     ' 5 minutes late.',
+    ' condoning the usage of jet-engine tractors.',
 
     ' using Astro!',
     ' using Clip Studio Paint!',
