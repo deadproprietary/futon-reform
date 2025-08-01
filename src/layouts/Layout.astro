@@ -23,14 +23,14 @@ import '@fontsource/ibm-plex-mono/700-italic.css';
 import "../styles/layout.scss";
 
 import { ThemeLoader, ThemeSelect, ThemeStyling } from "nottheme";
-import { ClientRouter } from "astro:transitions";
 
 import Sidebar from "../components/Sidebar/Sidebar.astro";
 import Stick from "../components/Stick.astro";
+import MetaHead from "./MetaHead.astro";
 
 import settings from "../theme";
 
-interface Props {
+export interface Props {
 	title: string;
 	path?: string;
 
@@ -66,15 +66,7 @@ const descPosX = (title.length / 2.1).toString() + 'rem';
 <!doctype HTML>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.8"/>
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta content="#766481" data-react-helmet="true" name="theme-color" />
-		<meta name="title" content={title} />
-		<meta name="description" content={description} />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<ClientRouter/>
+		<MetaHead title={title} description={description} />
 		<ThemeStyling settings={settings} />
 	</head>
 

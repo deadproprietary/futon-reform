@@ -69,9 +69,9 @@ export const index: Button[] = [
     },
     // cecilia
     {
-        img: "jay.png",
+        img: "cecilia.png",
         link: "https://hl2.sh/",
-        alt: "Jay"
+        alt: "ceciliabarks"
     },
     // zydra
     {
