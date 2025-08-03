@@ -58,7 +58,7 @@ export const index: Button[] = [
     // Rafl
     {
         img: "raflcoopter.gif",
-        link: "https://raflcoopter.carrd.co/",
+        link: "https://raflcoopter.neocities.org",
         alt: "Raflcoopter"
     },
     // mem
