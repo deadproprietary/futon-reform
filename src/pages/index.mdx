@@ -13,6 +13,8 @@ import MediaCard from '../components/MediaCard.astro';
 import mediaImage from "/public/placeholder.png";
 import Commit from "../components/Commit.astro";
 import "../styles/index.scss";
+import { calcAge } from "../utils";
+import { Modal } from 'accessible-astro-components';
 
 <RandomTicker client:only="svelte"/>
 <span id="ticker">*...is* ***<span id="tickertext" class="tickertext-normal"><noscript>here to stay.</noscript></span>***</span>
@@ -20,29 +22,39 @@ import "../styles/index.scss";
 ___
 
 hi. i'm **pillow**.  
-i like to draw on the internet.  
-i use any pronouns online.
+i'm a **{calcAge(972126000000)}**-year-old <span title="swedish" style="text-decoration: underline dotted darkgrey 1px;">🇸🇪</span> digital illustrator on the internet.  
+i use **any** pronouns. 
 
-this is my website. welcome.
+thanks for stopping by.
+___
+
+i mostly specialize in **character illustration/pin-ups** as well as dabbling in **comics**, but i enjoy learning new things about visual art.
+
+i've been drawing since 2018, and i started to take it *seriously* around 2020.
+
+i'm self-taught, using mostly guides from Twitter, YouTube and other places on the Internet, as well as getting mutual feedback from my friends and peers.
+
+my goal at the moment is to create my own comic.  
+i don't care if it'll be good or not, as long as i make it.
+
+i use Clip Studio Paint and/or Krita as my main software.  
+i use an XP-Pen Artist 24 Pro screen tablet.
 
 ---
 
-looking for my commissions?  
-[**find them right here.**](https://artistree.io/yummypillow " ")  
-please read my [**Terms of Service**](/tos) before commissioning me.
+this site is a constant work in progress, and is [openly available on Github.](https://github.com/deadproprietary/futon-reform)
 
-looking for my social media?  
-[**i mostly only use Bluesky right now.**](https://bsky.app/profile/yummypillow.art ' ')  
-my Discord tag is **yummypillow**.
+in the future i hope to use this site as a portfolio and potentially to host comics, as well as my characters and stories.
+
 
 ---
 
-in the future i will use this domain for listing my original characters and works,  
-as well as an image gallery portfolio.
+you can find me on **Discord** at [**yummypillow**](https://discord.com/users/98476829647589376)  
+feel free to contact me for anything you want!  
+just remember to [actually tell me what you want.](https://nohello.net)
 
-you can find all other links on the left sidebar.  
-open it by clicking the left side of the screen.
-
+all my other links can be found **on the sidebar to the left!**  
+click the left side of your screen, press Esc or swipe right to open it.
 
 thanks, and let’s draw.
 ___

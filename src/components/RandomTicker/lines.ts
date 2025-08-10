@@ -62,6 +62,7 @@ export const randomLines = [
     ' over there on the bottom right. Y\'see?',
     ' 5 minutes late.',
     ' condoning the usage of jet-engine tractors.',
+    ' thinking about OCs.',
 
     ' using Astro!',
     ' using Clip Studio Paint!',
@@ -91,4 +92,7 @@ export const randomLines = [
     ' using Windhawk!',
     ' using Fedora!',
     ' using Notepads!',
+    ' using foobar2000!',
+    ' using Allusion!',
+    ' using Proton Drive!',
 ]

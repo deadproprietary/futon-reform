@@ -1,7 +1,7 @@
 // various typescript utilities used in various places on the site.
 
-import type {APIContext, ImageMetadata} from "astro";
-import { getCollection } from "astro:content";
+import type {APIContext} from "astro";
+import {getCollection} from "astro:content";
 import * as child_process from "node:child_process";
 
 export function getBaseURL(context?: APIContext) {
@@ -17,6 +17,10 @@ export async function blogPosts() {
         (post) => post.data.wip !== true || !import.meta.env.PROD
     );
 }
+
+// sick oneliner bro
+export const calcAge = (b) => {return new Date(Date.now()).getFullYear() - new Date(b).getFullYear();};
+
 export const longhash = child_process.execSync("git rev-parse HEAD").toString().trim();
 export const shorthash = child_process.execSync("git rev-parse --short HEAD").toString().trim();
 export const commitMsg = child_process.execSync(`git show -s --oneline ${longhash}`).toString().trim().substring(8);
